@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gifts",
+  "info": {
+    "name": "Gift",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "where": {
+      "type": "string"
+    },
+    "category": {
+      "model": "category"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "BOUGHT",
+        "GROUP",
+        "TOBUY"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "giftlist": {
+      "via": "gifts",
+      "model": "giftlist"
+    },
+    "buyers": {
+      "via": "gift",
+      "collection": "gift-users-buyer"
+    },
+    "activities": {
+      "via": "gift",
+      "collection": "activity"
+    }
+  }
+}

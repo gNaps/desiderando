@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "giftlists",
+  "info": {
+    "name": "Giftlist",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "who": {
+      "type": "boolean"
+    },
+    "what": {
+      "type": "boolean"
+    },
+    "gifts": {
+      "via": "giftlist",
+      "collection": "gift"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "expiration": {
+      "type": "date"
+    },
+    "members": {
+      "collection": "giftlist-users-role",
+      "via": "giftlist"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/giftlists",
+      "handler": "giftlist.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/giftlists/count",
+      "handler": "giftlist.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/giftlists/:id",
+      "handler": "giftlist.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/giftlists",
+      "handler": "giftlist.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/giftlists/:id",
+      "handler": "giftlist.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/giftlists/invite/:id",
+      "handler": "giftlist.invite",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/giftlists/removeInvite/:id",
+      "handler": "giftlist.removeInvite",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/giftlists/:id",
+      "handler": "giftlist.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

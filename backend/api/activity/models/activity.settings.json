@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activities",
+  "info": {
+    "name": "activity",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "action": {
+      "type": "enumeration",
+      "enum": [
+        "ADD",
+        "BUY",
+        "CREATE"
+      ]
+    },
+    "user": {
+      "via": "activities",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "gift": {
+      "via": "activities",
+      "model": "gift"
+    }
+  }
+}

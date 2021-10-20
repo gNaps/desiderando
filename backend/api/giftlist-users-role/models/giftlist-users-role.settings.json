@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "giftlist_users_roles",
+  "info": {
+    "name": "GiftlistUsersRole",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "GUEST",
+        "OWNER"
+      ]
+    },
+    "giftlist": {
+      "via": "members",
+      "model": "giftlist"
+    }
+  }
+}

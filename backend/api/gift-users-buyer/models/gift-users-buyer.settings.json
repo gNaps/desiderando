@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gift_users_buyers",
+  "info": {
+    "name": "GiftUsersBuyer",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "gift": {
+      "via": "buyers",
+      "model": "gift"
+    }
+  }
+}

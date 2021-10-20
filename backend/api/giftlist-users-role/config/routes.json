@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/giftlist-users-roles",
+      "handler": "giftlist-users-role.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/giftlist-users-roles/count",
+      "handler": "giftlist-users-role.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/giftlist-users-roles/:id",
+      "handler": "giftlist-users-role.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/giftlist-users-roles",
+      "handler": "giftlist-users-role.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/giftlist-users-roles/:id",
+      "handler": "giftlist-users-role.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/giftlist-users-roles/:id",
+      "handler": "giftlist-users-role.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

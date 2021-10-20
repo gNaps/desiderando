@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/gift-users-buyers",
+      "handler": "gift-users-buyer.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/gift-users-buyers/count",
+      "handler": "gift-users-buyer.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/gift-users-buyers/:id",
+      "handler": "gift-users-buyer.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/gift-users-buyers",
+      "handler": "gift-users-buyer.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/gift-users-buyers/:id",
+      "handler": "gift-users-buyer.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/gift-users-buyers/:id",
+      "handler": "gift-users-buyer.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
