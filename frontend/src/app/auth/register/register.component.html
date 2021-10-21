@@ -1,1 +1,118 @@
-<p>register works!</p>
+<div class="navbar">
+  <img src="../../../assets/images/logo_light.png" />
+  <p>{{ "AUTH.CREATE_ACCOUNT" | translate }}</p>
+</div>
+
+<div class="form" [formGroup]="userToCreate">
+  <label class="custom-label">
+    {{ "AUTH.EMAIL" | translate }}
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="Digita la tua mail..."
+      formControlName="email"
+    />
+  </label>
+  <label class="custom-label">
+    {{ "AUTH.USERNAME" | translate }}
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="Digita il tuo username..."
+      formControlName="username"
+    />
+  </label>
+  <p>
+    {{ "AUTH.LOGIN_SUBTITLE" | translate }}
+  </p>
+  <label class="custom-label">
+    {{ "AUTH.PASSWORD" | translate }}
+    <input
+      type="password"
+      class="custom-input"
+      placeholder="Digita il tuo username..."
+      formControlName="password"
+    />
+  </label>
+  <label class="custom-label">
+    {{ "AUTH.PASSWORD_CONFIRM" | translate }}
+    <input
+      type="password"
+      class="custom-input"
+      placeholder="Digita il tuo username..."
+      formControlName="confirmPassword"
+    />
+  </label>
+  <label class="custom-label">
+    {{ "AUTH.BIRTH_DATE" | translate }}
+    <input
+      type="date"
+      class="custom-input"
+      placeholder="Digita il tuo username..."
+      formControlName="birthDate"
+    />
+  </label>
+  <label class="custom-label"> {{ "AUTH.SEX" | translate }} </label>
+  <div class="sex-box">
+    <label class="custom-label-checkbox">
+      <input
+        type="radio"
+        value="M"
+        class="custom-input-checkbox"
+        formControlName="sex"
+      />
+      {{ "AUTH.MALE" | translate }}
+    </label>
+    <label class="custom-label-checkbox">
+      <input
+        type="radio"
+        value="F"
+        class="custom-input-checkbox"
+        formControlName="sex"
+      />
+      {{ "AUTH.FEMALE" | translate }}
+    </label>
+    <label class="custom-label-checkbox">
+      <input
+        type="radio"
+        value=""
+        class="custom-input-checkbox"
+        formControlName="sex"
+      />
+      {{ "AUTH.NOT_ANSWER" | translate }}
+    </label>
+  </div>
+  <p class="secondary-text">
+    {{ "AUTH.PRIVACY" | translate }}
+  </p>
+  <label class="custom-label">{{ "AUTH.CHOOSE_AVATAR" | translate }}</label>
+  <div class="icon-grid">
+    <div *ngFor="let icon of iconPagePosition">
+      <div
+        class="icon"
+        [ngClass]="{ selected: checkIfSelected(icon) }"
+        (click)="selectIcon(icon)"
+      >
+        <img
+          [src]="'../../../assets/images/avatars/Avatar_' + (icon + 1) + '.png'"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="icon-grid-pagination">
+    <img
+      src="../../../assets/images/chevron_left_dark.svg"
+      (click)="prevPage()"
+    />
+    <img
+      src="../../../assets/images/chevron_right_dark.svg"
+      (click)="nextPage()"
+    />
+  </div>
+
+  <div class="button-box">
+    <button class="button button-primary" (click)="register()">
+      {{ "AUTH.REGISTER" | translate }}
+    </button>
+  </div>
+</div>

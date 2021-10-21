@@ -1,0 +1,59 @@
+@import "../../scss/abstract/variables";
+
+.auth-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 2em;
+
+  #logo {
+    width: 250px;
+    margin-bottom: 1em;
+  }
+
+  #header {
+    width: 100%;
+  }
+
+  .auth-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    text-align: center;
+
+    h4,
+    p {
+      max-width: 80%;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    p {
+      color: $grey;
+      font-weight: 300;
+    }
+
+    .language-box {
+      display: flex;
+      p {
+        font-size: 2em;
+        margin: 0 1em;
+        cursor: pointer;
+      }
+    }
+
+    .button-box {
+      margin-top: 1em;
+
+      button {
+        min-width: 200px;
+        margin-bottom: 1.5em;
+      }
+    }
+  }
+}

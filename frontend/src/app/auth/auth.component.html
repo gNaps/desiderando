@@ -1,1 +1,23 @@
-<p>auth works!</p>
+<div class="auth-box">
+  <img id="logo" src="../../assets/images/logo_dark.png" />
+  <img id="header" src="../../assets/images/auth-header.png" />
+
+  <div class="auth-actions">
+    <h4>{{ "AUTH.TITLE" | translate }}</h4>
+    <p>
+      {{ "AUTH.SUBTITLE" | translate }}
+    </p>
+    <div class="language-box">
+      <p (click)="changeLanguage('it')">🇮🇹</p>
+      <p (click)="changeLanguage('en')">🇬🇧</p>
+    </div>
+    <div class="button-box">
+      <button class="button button-primary" [routerLink]="['login']">
+        {{ "AUTH.LOGIN" | translate }}
+      </button>
+      <button class="button button-secondary" [routerLink]="['register']">
+        {{ "AUTH.REGISTER" | translate }}
+      </button>
+    </div>
+  </div>
+</div>

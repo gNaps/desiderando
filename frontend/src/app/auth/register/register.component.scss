@@ -1,0 +1,72 @@
+@import "../../../scss/abstract/variables";
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+  padding: 1.5em;
+  text-align: center;
+  border-radius: 0px 0px 20px 20px;
+
+  p {
+    margin-top: 2em;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: $white;
+    font-size: 1em;
+  }
+
+  img {
+    width: 140px;
+  }
+}
+
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-top: 1em;
+
+  .sex-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+
+      &.selected {
+        background: $light-green;
+        border-radius: 20px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .icon-grid-pagination {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1em;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .button-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+  }
+}

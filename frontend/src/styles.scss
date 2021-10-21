@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "scss/abstract/variables";
+@import "scss/components/buttons";
+@import "scss/components/forms";
+
+body,
+html {
+  font-family: "Poppins";
+  min-height: 100vh;
+}
+
+.secondary-text {
+  color: $grey;
+  font-weight: 200;
+}
+
+

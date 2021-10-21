@@ -1,0 +1,8 @@
+@import "../scss/abstract/variables";
+
+.container {
+  min-height: 100vh;
+  max-width: 428px;
+  margin: auto;
+  background-color: $white;
+}

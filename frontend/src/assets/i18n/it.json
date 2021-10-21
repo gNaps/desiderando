@@ -1,0 +1,22 @@
+{
+  "AUTH": {
+    "BIRTH_DATE": "Data di nascita",
+    "CHOOSE_AVATAR": "Scegli un avatar",
+    "CREATE_ACCOUNT": "Creazione dell'account",
+    "EMAIL": "Email",
+    "FEMALE": "Femmina",
+    "LOGIN": "Accedi",
+    "LOGIN_SUBTITLE": "Scegli una password sicura con almeno un carattere maiuscolo e un numero",
+    "MALE": "Maschio",
+    "NOT_ANSWER": " Non voglio rispondere",
+    "PASSWORD": "Password",
+    "PASSWORD_CONFIRM": "Conferma password",
+    "PRIVACY": "La condivisione di questi dati ci aiuta a offrirti la maggior esperienza possibile",
+    "REGISTER": "Registrati",
+    "SUBTITLE": "Crea liste di regali da condividere con i tuoi amici, addio regali indesiderati",
+    "SEX": "Sesso",
+    "TITLE": "Fare e ricevere regali non è mai stato così semplice",
+    "USERNAME": "Username",
+    "USERNAME_EMAIL": "Username o email"
+  }
+}

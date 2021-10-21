@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="login-box">
+  <img id="logo" src="../../assets/images/logo_dark.png" />
+  <img id="header" src="../../assets/images/login-header.png" />
+
+  <div class="login-actions" [formGroup]="userLogin">
+    <label class="custom-label">
+      {{ "AUTH.USERNAME_EMAIL" | translate }}
+      <input
+        type="text"
+        class="custom-input"
+        placeholder="Digita la tua username o email..."
+        formControlName="identifier"
+      />
+    </label>
+    <label class="custom-label">
+      {{ "AUTH.PASSWORD" | translate }}
+      <input
+        type="password"
+        class="custom-input"
+        placeholder="Digita la tua password..."
+        formControlName="password"
+      />
+    </label>
+    <div class="button-box">
+      <button class="button button-primary" (click)="login()">
+        {{ "AUTH.LOGIN" | translate }}
+      </button>
+    </div>
+  </div>
+</div>

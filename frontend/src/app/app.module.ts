@@ -1,12 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { APP_INITIALIZER, NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { LayoutComponent } from "./layout/layout.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { NavbarComponent } from "./layout/navbar/navbar.component";
+import { FooterComponent } from "./layout/footer/footer.component";
+import { TranslateModule } from "@ngx-translate/core";
+import { appInit } from "./app-init";
+import { DictionaryService } from "./core/dictionary.service";
 
 @NgModule({
   declarations: [
@@ -14,13 +17,17 @@ import { FooterComponent } from './layout/footer/footer.component';
     LayoutComponent,
     DashboardComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  imports: [BrowserModule, AppRoutingModule, TranslateModule.forRoot()],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInit,
+      multi: true,
+      deps: [DictionaryService],
+    },
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

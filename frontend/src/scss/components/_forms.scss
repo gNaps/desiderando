@@ -1,0 +1,32 @@
+.custom-label {
+  display: flex;
+  flex-direction: column;
+  color: $grey;
+  margin: 1em 0;
+}
+
+.custom-input {
+  border-radius: 20px;
+  background-color: $light-grey;
+  border: none;
+  padding: 1.3em;
+  margin-top: .5em;
+
+  &::placeholder {
+    color: $grey2;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $grey2;
+  }
+
+  &::-ms-input-placeholder {
+    color: $grey2;
+  }
+}
+
+.custom-label-checkbox {
+  font-size: .8em;
+  margin: .5em 0;
+}

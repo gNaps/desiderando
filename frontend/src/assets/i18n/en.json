@@ -1,0 +1,22 @@
+{
+  "AUTH": {
+    "BIRTH_DATE": "Date of birth",
+    "CHOOSE_AVATAR": "Choose avatar",
+    "CREATE_ACCOUNT": "Account creation",
+    "EMAIL": "Email",
+    "FEMALE": "Female",
+    "LOGIN": "Log in",
+    "LOGIN_SUBTITLE": "Choose a secure password with at least one uppercase character and one number",
+    "MALE": "Male",
+    "NOT_ANSWER": "Not answer",
+    "PASSWORD": "Password",
+    "PASSWORD_CONFIRM": "Confirm password",
+    "PRIVACY": "Sharing this data helps us to give you the best possible experience",
+    "REGISTER": "Sign in",
+    "SUBTITLE": "Create giftlists to share with your friends, goodbye unwanted gifts",
+    "SEX": "Sex",
+    "TITLE": "Give and receive gifts has never been so simple",
+    "USERNAME": "Username",
+    "USERNAME_EMAIL": "Username or email"
+  }
+}
