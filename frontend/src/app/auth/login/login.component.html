@@ -25,6 +25,10 @@
       <button class="button button-primary" (click)="login()">
         {{ "AUTH.LOGIN" | translate }}
       </button>
+
+      <h4>
+        <a [routerLink]="['/auth', 'register']">{{ "AUTH.NOT_ACCOUNT" | translate }}</a>
+      </h4>
     </div>
   </div>
 </div>

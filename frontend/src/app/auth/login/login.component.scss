@@ -27,11 +27,25 @@
     .button-box {
       margin-top: 1em;
       display: flex;
-      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      align-self: center;
+      width: 80%;
 
       button {
         min-width: 200px;
+      }
+
+      h4 {
         margin-bottom: 1.5em;
+        a {
+          color: $purple;
+          text-decoration: none;
+
+          &:hover {
+            color: $dark-purple;
+          }
+        }
       }
     }
   }
