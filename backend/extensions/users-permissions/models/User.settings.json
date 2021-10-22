@@ -70,12 +70,12 @@
         "NO"
       ]
     },
-    "icon_profile": {
-      "type": "string"
-    },
     "activities": {
       "via": "user",
       "collection": "activity"
+    },
+    "icon_profile": {
+      "type": "integer"
     }
   }
 }
