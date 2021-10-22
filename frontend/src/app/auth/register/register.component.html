@@ -1,3 +1,4 @@
+<ng-progress [thick]="true" [color]="'#F4055B'"></ng-progress>
 <div class="navbar">
   <img src="../../../assets/images/logo_light.png" />
   <p>{{ "AUTH.CREATE_ACCOUNT" | translate }}</p>
@@ -12,6 +13,7 @@
       placeholder="Digita la tua mail..."
       formControlName="email"
     />
+    <app-control-errors controlName="email"></app-control-errors>
   </label>
   <label class="custom-label">
     {{ "AUTH.USERNAME" | translate }}
@@ -21,6 +23,7 @@
       placeholder="Digita il tuo username..."
       formControlName="username"
     />
+    <app-control-errors controlName="username"></app-control-errors>
   </label>
   <p>
     {{ "AUTH.LOGIN_SUBTITLE" | translate }}
@@ -33,6 +36,7 @@
       placeholder="Digita il tuo username..."
       formControlName="password"
     />
+    <app-control-errors controlName="password"></app-control-errors>
   </label>
   <label class="custom-label">
     {{ "AUTH.PASSWORD_CONFIRM" | translate }}
@@ -42,15 +46,20 @@
       placeholder="Digita il tuo username..."
       formControlName="confirmPassword"
     />
+    <app-control-errors controlName="confirmPassword"></app-control-errors>
   </label>
+  <p class="secondary-text">
+    {{ "AUTH.PRIVACY" | translate }}
+  </p>
   <label class="custom-label">
     {{ "AUTH.BIRTH_DATE" | translate }}
     <input
       type="date"
       class="custom-input"
       placeholder="Digita il tuo username..."
-      formControlName="birthDate"
+      formControlName="born_date"
     />
+    <app-control-errors controlName="born_date"></app-control-errors>
   </label>
   <label class="custom-label"> {{ "AUTH.SEX" | translate }} </label>
   <div class="sex-box">
@@ -75,16 +84,14 @@
     <label class="custom-label-checkbox">
       <input
         type="radio"
-        value=""
+        value="NO"
         class="custom-input-checkbox"
         formControlName="sex"
       />
       {{ "AUTH.NOT_ANSWER" | translate }}
     </label>
+    <app-control-errors controlName="sex"></app-control-errors>
   </div>
-  <p class="secondary-text">
-    {{ "AUTH.PRIVACY" | translate }}
-  </p>
   <label class="custom-label">{{ "AUTH.CHOOSE_AVATAR" | translate }}</label>
   <div class="icon-grid">
     <div *ngFor="let icon of iconPagePosition">
@@ -109,6 +116,7 @@
       (click)="nextPage()"
     />
   </div>
+  <app-control-errors controlName="icon_profile"></app-control-errors>
 
   <div class="button-box">
     <button class="button button-primary" (click)="register()">

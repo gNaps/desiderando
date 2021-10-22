@@ -19,5 +19,15 @@
     "TITLE": "Fare e ricevere regali non è mai stato così semplice",
     "USERNAME": "Username",
     "USERNAME_EMAIL": "Username o email"
+  },
+  "VALIDATE": {
+    "CONFIRM_PASSWORD": "Le password non combaciano",
+    "EMAIL": "E-mail non valida",
+    "GENERIC_ERROR": "Campo invalido",
+    "MAX": "Il valore massimo è {{ value.max }}",
+    "MAX_LENGTH": "Il numero massimo di caratteri per questo campo è {{ value.requiredLength }}",
+    "MIN": "Il valore minimo è {{ value.min }}",
+    "MIN_LENGTH": "Il numero minimo di caratteri per questo campo è {{ value.requiredLength }}",
+    "REQUIRED": "Campo obbligatorio"
   }
 }

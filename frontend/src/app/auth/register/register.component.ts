@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { AuthService } from "src/app/api/api/auth.service";
+import { User, UserResponse } from "src/app/api/models/user";
+import { UserRegister } from "src/app/api/models/userRegister";
+import { checkSamePassword } from "../confirm-password.directive";
 
 @Component({
   selector: "app-register",
@@ -13,16 +17,22 @@ export class RegisterComponent implements OnInit {
   limit: number = 20;
 
   userToCreate: FormGroup = new FormGroup({
-    email: new FormControl(""),
-    username: new FormControl(""),
-    password: new FormControl(""),
-    confirmPassword: new FormControl(""),
-    birthDate: new FormControl(""),
-    sex: new FormControl(""),
-    icon: new FormControl(""),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    username: new FormControl("", [Validators.required]),
+    password: new FormControl("", [
+      Validators.required,
+      Validators.minLength(8),
+      Validators.pattern(
+        "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}"
+      ),
+    ]),
+    confirmPassword: new FormControl("", [checkSamePassword()]),
+    born_date: new FormControl("", [Validators.required]),
+    sex: new FormControl("", [Validators.required]),
+    icon_profile: new FormControl("", [Validators.required]),
   });
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.iconPagePosition = [...Array(20).keys()];
@@ -51,14 +61,26 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    console.log(this.userToCreate.value);
+    if (this.userToCreate.valid) {
+      const user: UserRegister = { ...this.userToCreate.value };
+      this.authService.register(user).subscribe((data: UserResponse) => {
+        const { jwt, user } = data;
+        const { id, email, icon_profile } = user;
+        this.authService.setLoggedUser(id!, email!, icon_profile!, jwt);
+      });
+    } else {
+      Object.keys(this.userToCreate.controls).forEach((field) => {
+        const control = this.userToCreate.get(field)!;
+        control.markAsTouched({ onlySelf: true });
+      });
+    }
   }
 
   selectIcon(icon: number) {
-    this.userToCreate.controls["icon"].setValue(icon);
+    this.userToCreate.controls["icon_profile"].setValue(icon);
   }
 
   checkIfSelected(icon: number) {
-    return this.userToCreate.controls["icon"].value === icon;
+    return this.userToCreate.controls["icon_profile"].value === icon;
   }
 }

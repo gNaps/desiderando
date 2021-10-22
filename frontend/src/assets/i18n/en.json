@@ -19,5 +19,15 @@
     "TITLE": "Give and receive gifts has never been so simple",
     "USERNAME": "Username",
     "USERNAME_EMAIL": "Username or email"
+  },
+  "VALIDATE": {
+    "CONFIRM_PASSWORD": "Passwords are not the same",
+    "EMAIL": "E-mail error",
+    "GENERIC_ERROR": "Error",
+    "MAX": "Max value is  {{ value.max }}",
+    "MAX_LENGTH": "Max lenght value is  {{ value.requiredLength }}",
+    "MIN": "Min value is  {{ value.min }}",
+    "MIN_LENGTH": "Min lenght value is  {{ value.requiredLength }}",
+    "REQUIRED": "Required field"
   }
 }

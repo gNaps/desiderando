@@ -6,6 +6,9 @@ import { LoginComponent } from "./login/login.component";
 import { AuthComponent } from "./auth.component";
 import { RegisterComponent } from "./register/register.component";
 import { TranslateModule } from "@ngx-translate/core";
+import { NgProgressModule } from "ngx-progressbar";
+import { NgProgressHttpModule } from "ngx-progressbar/http";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   declarations: [LoginComponent, AuthComponent, RegisterComponent],
@@ -15,6 +18,9 @@ import { TranslateModule } from "@ngx-translate/core";
     TranslateModule.forChild(),
     FormsModule,
     ReactiveFormsModule,
+    NgProgressModule,
+    NgProgressHttpModule,
+    SharedModule
   ],
 })
 export class AuthModule {}

@@ -1,3 +1,4 @@
+<ng-progress [thick]="true" [color]="'#F4055B'"></ng-progress>
 <div class="login-box">
   <img id="logo" src="../../assets/images/logo_dark.png" />
   <img id="header" src="../../assets/images/login-header.png" />
@@ -11,6 +12,7 @@
         placeholder="Digita la tua username o email..."
         formControlName="identifier"
       />
+      <app-control-errors controlName="identifier"></app-control-errors>
     </label>
     <label class="custom-label">
       {{ "AUTH.PASSWORD" | translate }}
@@ -20,7 +22,11 @@
         placeholder="Digita la tua password..."
         formControlName="password"
       />
+      <app-control-errors controlName="password"></app-control-errors>
     </label>
+    <div class="credential-error" *ngIf="credentialError">
+      {{ "AUTH.INVALID_CREDENTIAL" | translate }}
+    </div>
     <div class="button-box">
       <button class="button button-primary" (click)="login()">
         {{ "AUTH.LOGIN" | translate }}

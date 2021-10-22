@@ -10,6 +10,10 @@ import { FooterComponent } from "./layout/footer/footer.component";
 import { TranslateModule } from "@ngx-translate/core";
 import { appInit } from "./app-init";
 import { DictionaryService } from "./core/dictionary.service";
+import { ApiModule } from "./api/api.module";
+import { NgProgressModule } from "ngx-progressbar";
+import { NgProgressHttpModule } from "ngx-progressbar/http";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +23,15 @@ import { DictionaryService } from "./core/dictionary.service";
     NavbarComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, TranslateModule.forRoot()],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ApiModule,
+    TranslateModule.forRoot(),
+    NgProgressModule,
+    NgProgressHttpModule,
+    SharedModule
+  ],
   providers: [
     {
       provide: APP_INITIALIZER,
