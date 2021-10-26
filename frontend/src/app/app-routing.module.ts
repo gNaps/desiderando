@@ -24,6 +24,14 @@ const routes: Routes = [
             component: DashboardComponent,
           },
           {
+            path: "giftlist",
+            canLoad: [AuthGuard],
+            loadChildren: () =>
+              import("./giftlist/giftlist.module").then(
+                (m) => m.GiftlistModule
+              ),
+          },
+          {
             path: "",
             redirectTo: "dashboard",
             pathMatch: "full",
