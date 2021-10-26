@@ -1,17 +1,10 @@
 <app-navbar [type]="'DASHBOARD'"></app-navbar>
-<div class="search-input">
-  <label class="custom-label">
-    <input
-      type="text"
-      class="custom-input"
-      placeholder="Cerca una lista dei desideri..."
-    />
-  </label>
-</div>
-<div class="navigator">
-  <p>Liste desideri</p>
-  <img src="../../assets/images/arrow_right.svg" />
-</div>
+<app-search-input></app-search-input>
+<app-navigator
+  [title]="'Liste desideri'"
+  [image]="'../../assets/images/arrow_right.svg'"
+  [routerLink]="['/', 'giftlist']"
+></app-navigator>
 <ng-container *ngIf="giftlists$ | async; let giftlistList; else: loading">
   <div class="giftlist-container">
     <ng-container
@@ -28,10 +21,11 @@
     </ng-container>
   </div>
 </ng-container>
-<div class="navigator">
-  <p>Ultime attività</p>
-  <img src="../../assets/images/arrow_right.svg" />
-</div>
+<app-navigator
+  [title]="'Ultime attività'"
+  [image]="'../../assets/images/arrow_right.svg'"
+  [routerLink]="['/', 'activity']"
+></app-navigator>
 <ng-container *ngIf="activities$ | async; let activityList; else: loading">
   <div class="activity-container">
     <ng-container

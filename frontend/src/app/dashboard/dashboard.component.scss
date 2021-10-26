@@ -4,28 +4,6 @@
   padding: 1em;
 }
 
-.search-input {
-  display: flex;
-  justify-content: center;
-
-  .custom-label {
-    width: 80%;
-
-    input {
-      background-image: url("../../assets/images/search.svg");
-      background-repeat: no-repeat;
-      background-position: 15px 10px;
-      padding-left: 4em;
-    }
-  }
-}
-
-.navigator {
-  display: flex;
-  padding: 0 1em;
-  justify-content: space-between;
-}
-
 .activity-container {
   display: flex;
   flex-direction: column;

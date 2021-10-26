@@ -1,0 +1,26 @@
+.giftlist-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em;
+}
+
+.secondary-text {
+  margin: 0;
+  padding-left: 1em;
+}
+
+.container-search {
+  padding: 0 1em;
+  app-search-input {
+    flex: 1;
+  }
+
+  .button-action-primary {
+    margin-top: 0.5em;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

@@ -8,6 +8,14 @@
   color: $white;
 }
 
+.button-action {
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  border-radius: 15px;
+  border: none;
+  color: $white;
+}
+
 .button-primary {
   @extend .button;
   background-color: $purple;
@@ -18,10 +26,19 @@
 }
 
 .button-secondary {
-    @extend .button;
-    background-color: $red;
-  
-    &:hover {
-      background-color: $dark-red;
-    }
+  @extend .button;
+  background-color: $red;
+
+  &:hover {
+    background-color: $dark-red;
   }
+}
+
+.button-action-primary {
+  @extend .button-action;
+  background-color: $purple;
+
+  &:hover {
+    background-color: $dark-purple;
+  }
+}

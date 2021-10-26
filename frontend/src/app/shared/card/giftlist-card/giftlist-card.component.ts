@@ -9,6 +9,7 @@ import { Giftlist } from "src/app/api/models/giftlist";
 export class GiftlistCardComponent implements OnInit {
   @Input() giftlist!: Giftlist;
   @Input() classIndex: number = 0;
+  @Input() complete?: boolean;
 
   constructor() {}
 
@@ -27,5 +28,30 @@ export class GiftlistCardComponent implements OnInit {
       default:
         return "";
     }
+  }
+
+  checkIfComplete() {
+    return this.complete ? "complete" : "";
+  }
+
+  getShape(index: number) {
+    let shape = "";
+    switch (index) {
+      case 0:
+        shape = "pyramid";
+        break;
+      case 1:
+        shape = "cube";
+        break;
+      case 2:
+        shape = "cylinder";
+        break;
+      case 3:
+        shape = "cristall";
+        break;
+      default:
+        shape = "";
+    }
+    return `../../../../assets/images/shapes/${shape}.png`;
   }
 }

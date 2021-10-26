@@ -1,4 +1,4 @@
-<div class="card" [ngClass]="'style-' + classIndex">
+<div class="card" [ngClass]="['style-' + classIndex, checkIfComplete()]">
   <div class="left-side">
     <h4>{{ giftlist.name }}</h4>
     <app-members
@@ -18,7 +18,7 @@
       <p></p>
     </div>
   </div>
-  <div class="right-side">
+  <div class="right-side" [ngClass]="{'complete': complete}">
     <circle-progress
       [percent]="(giftlist.gifts_percentage ?? 0)"
       [radius]="40"
@@ -36,5 +36,8 @@
       [unitsColor]="getCircleProgressColor(classIndex)"
       [titleFontWeight]="'700'"
     ></circle-progress>
+    <div *ngIf="complete" class="d-flex">
+      <img [src]="getShape(classIndex)" />
+    </div>
   </div>
 </div>

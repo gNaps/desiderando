@@ -6,6 +6,10 @@ import { GiftlistCardComponent } from './card/giftlist-card/giftlist-card.compon
 import { MembersComponent } from './members/members.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ActivityCardComponent } from './card/activity-card/activity-card.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SearchInputComponent } from './search-input/search-input.component';
+import { NavigatorComponent } from './navigator/navigator.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,16 +17,23 @@ import { ActivityCardComponent } from './card/activity-card/activity-card.compon
     GiftlistCardComponent,
     MembersComponent,
     ActivityCardComponent,
+    NavbarComponent,
+    SearchInputComponent,
+    NavigatorComponent
   ],
   imports: [
     CommonModule,
     TranslateModule.forChild(),
-    NgCircleProgressModule.forRoot()
+    NgCircleProgressModule.forRoot(),
+    RouterModule
   ],
   exports: [
     ControlErrorsComponent,
     GiftlistCardComponent,
-    ActivityCardComponent
+    ActivityCardComponent,
+    NavbarComponent,
+    SearchInputComponent,
+    NavigatorComponent
   ]
 })
 export class SharedModule { }

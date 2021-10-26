@@ -31,10 +31,33 @@
 
   .info-box {
     color: $white;
-    margin-left: .5em;
+    margin-left: 0.5em;
 
-    h5, p {
-        margin: 0;
+    h5,
+    p {
+      margin: 0;
+    }
+  }
+
+  &.navbar-minimal {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .avatar {
+      width: 40px !important;
+      height: 40px !important;
+      border-radius: 15px !important;
+    }
+
+    p {
+      color: $white;
+      font-weight: 700;
+    }
+
+    .back {
+      cursor: pointer;
     }
   }
 }

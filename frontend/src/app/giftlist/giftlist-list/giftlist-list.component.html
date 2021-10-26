@@ -1,1 +1,48 @@
-<p>giftlist-list works!</p>
+<app-navbar [type]="'MINIMAL'" [title]="'Liste desideri'"></app-navbar>
+<div class="d-flex align-items-center container-search">
+  <app-search-input></app-search-input>
+  <button class="button-action-primary">
+    <img src="../../../assets/images/add-round.svg" />
+  </button>
+</div>
+<app-navigator [title]="'Liste gestite'"></app-navigator>
+<ng-container *ngIf="giftlistOwner && giftlistOwner.length > 0; else loading">
+  <div class="giftlist-container">
+    <ng-container
+      *ngFor="
+        let giftlist of giftlistOwner;
+        trackBy: trackByFnGiftlist;
+        let i = index
+      "
+    >
+      <app-giftlist-card
+        [giftlist]="giftlist"
+        [classIndex]="i"
+        [complete]="true"
+      ></app-giftlist-card>
+    </ng-container>
+  </div>
+</ng-container>
+<app-navigator [title]="'Inviti'"></app-navigator>
+<ng-container *ngIf="giftlistInvite && giftlistInvite.length > 0; else loading">
+  <div class="giftlist-container">
+    <ng-container
+      *ngFor="
+        let giftlist of giftlistInvite;
+        trackBy: trackByFnGiftlist;
+        let i = index
+      "
+    >
+      <app-giftlist-card
+        [giftlist]="giftlist"
+        [classIndex]="i"
+        [complete]="true"
+      ></app-giftlist-card>
+    </ng-container>
+  </div>
+</ng-container>
+<ng-template #loading
+  ><p class="secondary-text">
+    Nessuna lista dei desideri trovata...
+  </p></ng-template
+>
