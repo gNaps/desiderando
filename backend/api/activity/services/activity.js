@@ -23,6 +23,7 @@ module.exports = {
         qb.select(
           "activities.id",
           "activities.action",
+          "activities.created_at",
           { userId: "users-permissions_user.id" },
           "users-permissions_user.username",
           "users-permissions_user.email",
@@ -51,7 +52,16 @@ module.exports = {
         qb.where("giftlists.id", "in", idsGiftlist);
         qb.where("activities.user", "<>", userId);
         qb.where("giftlists.who", "<>", 0);
-        limit ? qb.limit(limit) : null;
+        qb.where("giftlists.who", "<>", 0);
+        qb.where(
+          "activities.created_at",
+          ">",
+          new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
+        );
+        if (limit) {
+          qb.limit(5);
+        }
+        qb.orderBy("activities.id", "DESC");
       })
       .fetchAll();
 
