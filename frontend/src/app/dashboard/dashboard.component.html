@@ -1,1 +1,52 @@
-<p>dashboard works!</p>
+<app-navbar [type]="'DASHBOARD'"></app-navbar>
+<div class="search-input">
+  <label class="custom-label">
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="Cerca una lista dei desideri..."
+    />
+  </label>
+</div>
+<div class="navigator">
+  <p>Liste desideri</p>
+  <img src="../../assets/images/arrow_right.svg" />
+</div>
+<ng-container *ngIf="giftlists$ | async; let giftlistList; else: loading">
+  <div class="giftlist-container">
+    <ng-container
+      *ngFor="
+        let giftlist of giftlistList;
+        trackBy: trackByFnGiftlist;
+        let i = index
+      "
+    >
+      <app-giftlist-card
+        [giftlist]="giftlist"
+        [classIndex]="i"
+      ></app-giftlist-card>
+    </ng-container>
+  </div>
+</ng-container>
+<div class="navigator">
+  <p>Ultime attività</p>
+  <img src="../../assets/images/arrow_right.svg" />
+</div>
+<ng-container *ngIf="activities$ | async; let activityList; else: loading">
+  <div class="giftlist-container">
+    <ng-container
+      *ngFor="
+        let act of activityList;
+        trackBy: trackByFnActivities;
+        let i = index
+      "
+    >
+      <!-- <app-giftlist-card
+        [giftlist]="giftlist"
+        [classIndex]="i"
+      ></app-giftlist-card> -->
+      {{act.id}}
+    </ng-container>
+  </div>
+</ng-container>
+<ng-template #loading>Loading...</ng-template>

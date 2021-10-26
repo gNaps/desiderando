@@ -1,0 +1,83 @@
+@import "../../../../scss/abstract/variables";
+
+.card {
+  min-width: 250px;
+  min-height: 125px;
+  margin-right: 2em;
+  padding: 1em;
+  border-radius: 20px;
+  display: flex;
+
+  h4,
+  p {
+    margin: 0;
+  }
+
+  h4 {
+    margin-bottom: .5em;
+  }
+
+  .left-side,
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      font-size: 0.9em;
+      margin: 0;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+
+      &.gift-icon {
+        -webkit-mask: url(../../../../assets/images/gift.svg) no-repeat center;
+        mask: url(../../../../assets/images/gift.svg) no-repeat center;
+      }
+      &.expiration-icon {
+        -webkit-mask: url(../../../../assets/images/time.svg) no-repeat center;
+        mask: url(../../../../assets/images/time.svg) no-repeat center;
+      }
+    }
+  }
+
+  .left-side {
+    .gift,
+    .expiration {
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .right-side {
+    flex: 1;
+    align-items: center;
+  }
+
+  &.style-0 {
+    background-color: $light-green;
+    color: $dark-green;
+    .icon {
+      background-color: $dark-green;
+    }
+  }
+  &.style-1 {
+    background-color: $light-red;
+    color: $dark-red;
+    .icon {
+      background-color: $dark-red;
+    }
+  }
+  &.style-2 {
+    background-color: $light-purple;
+  }
+  &.style-3 {
+    background-color: $light-yellow;
+  }
+}

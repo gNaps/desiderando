@@ -1,0 +1,40 @@
+<div class="card" [ngClass]="'style-' + classIndex">
+  <div class="left-side">
+    <h4>{{ giftlist.name }}</h4>
+    <app-members
+      [members]="giftlist.members!"
+      [classIndex]="classIndex"
+    ></app-members>
+    <div class="gift">
+      <div class="icon gift-icon"></div>
+      <p>{{ giftlist.gifts?.length }} regali</p>
+    </div>
+    <div class="expiration">
+      <div class="icon expiration-icon"></div>
+      <p *ngIf="giftlist.expiration; else noExpiration"></p>
+      <ng-template #noExpiration>
+        <p>Non scade</p>
+      </ng-template>
+      <p></p>
+    </div>
+  </div>
+  <div class="right-side">
+    <circle-progress
+      [percent]="(giftlist.gifts_percentage ?? 0)"
+      [radius]="40"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="4"
+      [showInnerStroke]="true"
+      [showZeroOuterStroke]="true"
+      [outerStrokeColor]="getCircleProgressColor(classIndex)"
+      [innerStrokeColor]="'#FBFBFB'"
+      [space]="-4"
+      [animation]="true"
+      [animationDuration]="300"
+      [showSubtitle]="false"
+      [titleColor]="getCircleProgressColor(classIndex)"
+      [unitsColor]="getCircleProgressColor(classIndex)"
+      [titleFontWeight]="'700'"
+    ></circle-progress>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+@import "../../../scss/abstract/variables";
+
+.member-box {
+  display: flex;
+
+  .member-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid;
+
+    &:not(:first-child) {
+      margin-left: -10px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &.style-0 {
+      border-color: $dark-green;
+      background-color: $light-green;
+    }
+    &.style-1 {
+      border-color: $dark-red;
+      background-color: $light-red;
+    }
+    &.style-2 {
+      border-color: $dark-purple;
+      background-color: $light-purple;
+    }
+    &.style-3 {
+      border-color: $dark-yellow;
+      background-color: $light-yellow;
+    }
+  }
+}

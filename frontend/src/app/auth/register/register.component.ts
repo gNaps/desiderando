@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { AuthService } from "src/app/api/api/auth.service";
 import { User, UserResponse } from "src/app/api/models/user";
 import { UserRegister } from "src/app/api/models/userRegister";
@@ -32,7 +33,7 @@ export class RegisterComponent implements OnInit {
     icon_profile: new FormControl("", [Validators.required]),
   });
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.iconPagePosition = [...Array(20).keys()];
@@ -65,8 +66,16 @@ export class RegisterComponent implements OnInit {
       const user: UserRegister = { ...this.userToCreate.value };
       this.authService.register(user).subscribe((data: UserResponse) => {
         const { jwt, user } = data;
-        const { id, email, icon_profile } = user;
-        this.authService.setLoggedUser(id!, email!, icon_profile!, jwt);
+        const { id, email, icon_profile, username } = user;
+        this.authService.setLoggedUser(
+          id!,
+          email!,
+          icon_profile!,
+          username!,
+          jwt
+        );
+
+        this.router.navigate(["dashboard"]);
       });
     } else {
       Object.keys(this.userToCreate.controls).forEach((field) => {

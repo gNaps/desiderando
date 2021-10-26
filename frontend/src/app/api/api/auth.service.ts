@@ -2,7 +2,6 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
-import { User, UserResponse } from "../models/user";
 import { UserLogin } from "../models/userLogin";
 import { UserRegister } from "../models/userRegister";
 
@@ -10,25 +9,29 @@ import { UserRegister } from "../models/userRegister";
   providedIn: "root",
 })
 export class AuthService {
-  API_URL = environment.apiUrl;
-
   constructor(private httpClient: HttpClient) {}
 
   login(login: UserLogin): Observable<any> {
-    return this.httpClient.post(`${this.API_URL}/auth/local`, login);
+    return this.httpClient.post(`${environment.apiUrl}/auth/local`, login);
   }
 
   register(register: UserRegister): Observable<any> {
     return this.httpClient.post(
-      `${this.API_URL}/auth/local/register`,
+      `${environment.apiUrl}/auth/local/register`,
       register
     );
   }
 
-  setLoggedUser(id: number, email: string, icon_profile: number, jwt: string) {
+  setLoggedUser(
+    id: number,
+    email: string,
+    icon_profile: number,
+    username: string,
+    jwt: string
+  ) {
     localStorage.setItem(
       "userLoggedIn",
-      JSON.stringify({ id, email, icon_profile })
+      JSON.stringify({ id, email, icon_profile, username })
     );
     localStorage.setItem("jwt", jwt);
   }

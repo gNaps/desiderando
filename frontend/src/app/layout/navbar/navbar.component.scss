@@ -1,0 +1,40 @@
+@import "../../../scss/abstract/variables";
+
+.navbar {
+  background-color: $black;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  padding: 0 1em;
+
+  &.navbar-dashboard {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .user-box {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: $border-radius;
+      background-color: $white;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .info-box {
+    color: $white;
+    margin-left: .5em;
+
+    h5, p {
+        margin: 0;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../../scss/abstract/variables";
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 0;
+  background: #fff;
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    background-color: $grey3;
+  }
+
+  .active {
+    .icon {
+      background-color: $purple;
+    }
+  }
+
+  .home {
+    -webkit-mask: url(../../../assets/images/home.svg) no-repeat center;
+    mask: url(../../../assets/images/home.svg) no-repeat center;
+  }
+  .heart {
+    -webkit-mask: url(../../../assets/images/heart.svg) no-repeat center;
+    mask: url(../../../assets/images/heart.svg) no-repeat center;
+  }
+  .user {
+    -webkit-mask: url(../../../assets/images/user.svg) no-repeat center;
+    mask: url(../../../assets/images/user.svg) no-repeat center;
+  }
+  .star {
+    -webkit-mask: url(../../../assets/images/star.svg) no-repeat center;
+    mask: url(../../../assets/images/star.svg) no-repeat center;
+  }
+}
