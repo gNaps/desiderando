@@ -20,6 +20,7 @@
     "@angular/router": "~12.2.0",
     "@biesbjerg/ngx-translate-extract-marker": "^1.0.0",
     "@ngx-translate/core": "^13.0.0",
+    "moment": "^2.29.1",
     "ng-circle-progress": "^1.6.0",
     "ngx-progressbar": "^6.1.1",
     "rxjs": "~6.6.0",

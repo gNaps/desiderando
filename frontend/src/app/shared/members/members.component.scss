@@ -36,5 +36,9 @@
       border-color: $dark-yellow;
       background-color: $light-yellow;
     }
+
+    &.no-border {
+      border: none;
+    }
   }
 }

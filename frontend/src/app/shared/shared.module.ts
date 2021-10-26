@@ -5,12 +5,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { GiftlistCardComponent } from './card/giftlist-card/giftlist-card.component';
 import { MembersComponent } from './members/members.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ActivityCardComponent } from './card/activity-card/activity-card.component';
 
 @NgModule({
   declarations: [
     ControlErrorsComponent,
     GiftlistCardComponent,
     MembersComponent,
+    ActivityCardComponent,
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   ],
   exports: [
     ControlErrorsComponent,
-    GiftlistCardComponent
+    GiftlistCardComponent,
+    ActivityCardComponent
   ]
 })
 export class SharedModule { }

@@ -33,7 +33,7 @@
   <img src="../../assets/images/arrow_right.svg" />
 </div>
 <ng-container *ngIf="activities$ | async; let activityList; else: loading">
-  <div class="giftlist-container">
+  <div class="activity-container">
     <ng-container
       *ngFor="
         let act of activityList;
@@ -41,11 +41,7 @@
         let i = index
       "
     >
-      <!-- <app-giftlist-card
-        [giftlist]="giftlist"
-        [classIndex]="i"
-      ></app-giftlist-card> -->
-      {{act.id}}
+      <app-activity-card [activity]="act" [classIndex]="i"></app-activity-card>
     </ng-container>
   </div>
 </ng-container>

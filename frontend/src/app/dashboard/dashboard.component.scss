@@ -25,3 +25,8 @@
   padding: 0 1em;
   justify-content: space-between;
 }
+
+.activity-container {
+  display: flex;
+  flex-direction: column;
+}

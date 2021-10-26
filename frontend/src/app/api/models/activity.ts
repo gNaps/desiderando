@@ -11,4 +11,5 @@ export interface Activity {
   icon_profile: number;
   userId: number;
   username: string;
+  created_at?: string;
 }

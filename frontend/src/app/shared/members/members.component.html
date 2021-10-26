@@ -1,5 +1,9 @@
 <div class="member-box">
-  <div class="member-avatar" *ngFor="let m of members" [ngClass]="'style-' + classIndex">
+  <div
+    class="member-avatar"
+    *ngFor="let m of members"
+    [ngClass]="[getStyle(), getBorder()]"
+  >
     <img
       [src]="
         '../../../assets/images/avatars/Avatar_' +

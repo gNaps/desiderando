@@ -1,0 +1,25 @@
+<div class="card">
+  <div>
+    <img
+      [src]="
+        '../../../../assets/images/category/' + activity.giftCategory + '.png'
+      "
+    />
+  </div>
+  <div class="center">
+    <p class="title">{{ activity.giftlistName }}</p>
+    <div class="d-flex align-items-center">
+      <app-members
+        [members]="member"
+        [classIndex]="classIndex"
+        [border]="false"
+      ></app-members>
+      <p class="subtitle ml-1">
+        {{ getMessage() }} <strong> {{ activity.giftName }}</strong>
+      </p>
+    </div>
+  </div>
+  <div>
+    <p class="time">{{ getTime(activity.created_at!) }}</p>
+  </div>
+</div>
