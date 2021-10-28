@@ -60,4 +60,24 @@
       cursor: pointer;
     }
   }
+
+  &.navbar-detail-list {
+    height: 180px;
+    justify-content: start;
+
+    .detail-section-title {
+      color: #999999;
+      font-weight: 200;
+    }
+    .detail-section {
+      font-weight: 200;
+      margin: 0;
+    }
+
+    .calendar {
+      width: 32px;
+      height: 32px;
+      margin-right: .5em;
+    }
+  }
 }

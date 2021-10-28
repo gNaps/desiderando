@@ -37,3 +37,47 @@
     </div>
   </div>
 </div>
+
+<div
+  *ngIf="type === 'DETAIL-LIST'"
+  class="navbar navbar-minimal navbar-detail-list flex-column"
+>
+  <div class="d-flex justify-content-between w100">
+    <img
+      class="back"
+      src="../../../assets/images/chevron_left.svg"
+      (click)="back()"
+    />
+    <p>
+      {{ title }}
+    </p>
+    <div class="user-box">
+      <div class="avatar">
+        <img
+          [src]="
+            '../../../assets/images/avatars/Avatar_' +
+            (user.icon_profile! + 1) +
+            '.png'
+          "
+        />
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between w100">
+    <div class="d-flex flex-column align-items-center">
+      <p class="detail-section-title">Membri</p>
+      <app-members [members]="members!" [styleNavbar]="true"></app-members>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <p class="detail-section-title">Scadenza</p>
+      <div class="d-flex align-items-center">
+        <img class="calendar" src="../../../assets/images/calendar.svg" />
+        <p class="detail-section">{{ expiration ? expiration : "Mai" }}</p>
+      </div>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <p class="detail-section-title">Rimangono</p>
+      <p class="detail-section">{{ giftLefts }} regali</p>
+    </div>
+  </div>
+</div>

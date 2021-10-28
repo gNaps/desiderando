@@ -17,4 +17,13 @@ export class GiftlistService {
       headers: headers,
     });
   }
+
+  getGiftlistById(id: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    });
+    return this.httpClient.get(`${environment.apiUrl}/giftlists/${id}`, {
+      headers: headers,
+    });
+  }
 }

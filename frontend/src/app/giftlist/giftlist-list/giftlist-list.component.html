@@ -15,11 +15,13 @@
         let i = index
       "
     >
-      <app-giftlist-card
-        [giftlist]="giftlist"
-        [classIndex]="i"
-        [complete]="true"
-      ></app-giftlist-card>
+      <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration">
+        <app-giftlist-card
+          [giftlist]="giftlist"
+          [classIndex]="i"
+          [complete]="true"
+        ></app-giftlist-card
+      ></a>
     </ng-container>
   </div>
 </ng-container>
@@ -33,11 +35,13 @@
         let i = index
       "
     >
-      <app-giftlist-card
-        [giftlist]="giftlist"
-        [classIndex]="i"
-        [complete]="true"
-      ></app-giftlist-card>
+      <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration">
+        <app-giftlist-card
+          [giftlist]="giftlist"
+          [classIndex]="i"
+          [complete]="true"
+        ></app-giftlist-card>
+      </a>
     </ng-container>
   </div>
 </ng-container>

@@ -31,10 +31,6 @@ export class GiftlistListComponent implements OnInit {
       this.giftlistInvite = data.filter((g: any) =>
         g.members.some((m: any) => m.id === userId && m.role === "GUEST")
       );
-
-      console.log(userId);
-      console.log(this.giftlistOwner);
-      console.log(this.giftlistInvite);
     });
   }
 

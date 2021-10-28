@@ -1,0 +1,39 @@
+<div class="card">
+  <div>
+    <img
+      [src]="'../../../../assets/images/category/' + gift.category + '.png'"
+    />
+  </div>
+  <div class="center">
+    <p class="title">{{ gift.name }}</p>
+    <div class="d-flex align-items-center">
+      <p class="subtitle ml-1">
+        {{ getTime(gift.created_at!) }}
+      </p>
+      <div *ngIf="gift.status === 'TOBUY'" class="status tobuy">
+        Da comprare
+      </div>
+      <div *ngIf="gift.status === 'GROUP'" class="status group">
+        In gruppo
+        <img
+          *ngFor="let b of gift.buyers"
+          [src]="
+            '../../../../assets/images/avatars/Avatar_' + (b.user!.icon_profile! + 1) + '.png'
+          "
+        />
+      </div>
+      <div *ngIf="gift.status === 'BOUGHT'" class="status bought">
+        Comprato
+        <img
+          *ngFor="let b of gift.buyers"
+          [src]="
+            '../../../../assets/images/avatars/Avatar_' + (b.user!.icon_profile! + 1) + '.png'
+          "
+        />
+      </div>
+    </div>
+  </div>
+  <div class="price-container">
+    <p class="price">{{ gift.price }} €</p>
+  </div>
+</div>

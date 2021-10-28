@@ -1,1 +1,23 @@
-<p>giftlist-detail works!</p>
+<app-navbar
+  [type]="'DETAIL-LIST'"
+  [title]="giftlist?.name!"
+  [members]="giftlist?.members"
+  [expiration]="giftlist?.expiration"
+  [giftLefts]="giftsLeft"
+></app-navbar>
+<div class="d-flex align-items-center container-search">
+  <app-search-input></app-search-input>
+  <button class="button-action-primary">
+    <img src="../../../assets/images/add-round.svg" />
+  </button>
+  <button class="button-action-primary">
+    <img src="../../../assets/images/settings.svg" />
+  </button>
+</div>
+<app-navigator [title]="'Desideri'"></app-navigator>
+<div>
+  <app-gift-card
+    *ngFor="let gift of giftlist?.gifts"
+    [gift]="gift"
+  ></app-gift-card>
+</div>

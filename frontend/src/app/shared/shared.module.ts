@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchInputComponent } from './search-input/search-input.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { RouterModule } from '@angular/router';
+import { GiftCardComponent } from './card/gift-card/gift-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     ActivityCardComponent,
     NavbarComponent,
     SearchInputComponent,
-    NavigatorComponent
+    NavigatorComponent,
+    GiftCardComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { RouterModule } from '@angular/router';
     ActivityCardComponent,
     NavbarComponent,
     SearchInputComponent,
-    NavigatorComponent
+    NavigatorComponent,
+    GiftCardComponent
   ]
 })
 export class SharedModule { }

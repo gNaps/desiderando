@@ -14,10 +14,12 @@
         let i = index
       "
     >
-      <app-giftlist-card
-        [giftlist]="giftlist"
-        [classIndex]="i"
-      ></app-giftlist-card>
+      <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration">
+        <app-giftlist-card
+          [giftlist]="giftlist"
+          [classIndex]="i"
+        ></app-giftlist-card>
+      </a>
     </ng-container>
   </div>
 </ng-container>

@@ -1,4 +1,4 @@
-import { User } from "./user";
+import { GiftUsersBuyers } from "./giftUsersBuyers";
 
 export interface Gift {
   id: number;
@@ -9,5 +9,6 @@ export interface Gift {
   category: number;
   status: string;
   slug: string;
-  buyers: User[];
+  buyers: GiftUsersBuyers[];
+  created_at?: string;
 }

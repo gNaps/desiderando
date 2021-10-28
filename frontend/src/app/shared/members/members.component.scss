@@ -40,5 +40,10 @@
     &.no-border {
       border: none;
     }
+
+    &.navbar-style {
+      border-color: $white;
+      background-color: $black;
+    }
   }
 }

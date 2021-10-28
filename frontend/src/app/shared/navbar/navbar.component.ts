@@ -14,6 +14,9 @@ export class NavbarComponent implements OnInit {
   user!: User;
   @Input() type: navbarType = "DASHBOARD";
   @Input() title: string = "";
+  @Input() members?: User[];
+  @Input() expiration?: Date;
+  @Input() giftLefts?: number;
 
   constructor(private authService: AuthService, private location: Location) {
     this.user = this.authService.getLoggedUser();

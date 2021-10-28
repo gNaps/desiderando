@@ -1,0 +1,66 @@
+@import "../../../../scss/abstract/variables";
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $pure-white;
+  border-radius: $border-radius;
+  width: 80%;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.03);
+  margin: auto;
+  margin-bottom: 1em;
+  padding: 0.5em 0.7em 0.5em 0.5em;
+
+  img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .price-container {
+    min-width: 20%;
+    .price {
+      font-weight: 600;
+    }
+  }
+
+  .center {
+      width: 60%;
+    p {
+      margin: 0;
+      &.title {
+        margin-bottom: .5em;
+      }
+      &.subtitle {
+        font-size: 0.8em;
+      }
+    }
+
+    .status {
+      font-size: .7em;
+      margin-left: 1em;
+      border-radius: 20px;
+      padding: .3em .5em;
+      display: flex;
+      align-items: center;
+
+      &.tobuy {
+        background-color: $light-red;
+        color: $dark-red;
+      }
+      &.group {
+        background-color: $light-yellow;
+        color: $dark-yellow;
+      }
+      &.bought {
+        background-color: $light-green;
+        color: $dark-green;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

@@ -10,13 +10,14 @@ export class MembersComponent implements OnInit {
   @Input() members!: User[];
   @Input() classIndex: number = 0;
   @Input() border: boolean = true;
+  @Input() styleNavbar: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   getStyle() {
-    return "style-" + this.classIndex;
+    return this.styleNavbar ? "navbar-style" : "style-" + this.classIndex;
   }
 
   getBorder() {
