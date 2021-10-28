@@ -1,7 +1,7 @@
 const slugify = require("slugify");
 const { sanitizeEntity } = require("strapi-utils");
 
-const populate = ["members", "members.user", "gifts"];
+const populate = ["members", "members.user", "gifts", "gifts.buyers", "gifts.buyers.user"];
 
 module.exports = {
   /**
