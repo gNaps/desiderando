@@ -1,3 +1,4 @@
+import { GiftlistUsersRoles } from "./giftlistUserRoles";
 import { User } from "./user";
 
 export interface Giftlist {
@@ -9,6 +10,6 @@ export interface Giftlist {
   gifts?: any[];
   slug?: string;
   expiration?: Date;
-  members?: User[];
+  members?: GiftlistUsersRoles[];
   gifts_percentage?: number;
 }

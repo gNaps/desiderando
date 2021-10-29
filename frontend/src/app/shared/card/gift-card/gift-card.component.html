@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" (click)="openGift()">
   <div>
     <img
       [src]="'../../../../assets/images/category/' + gift.category + '.png'"
@@ -10,24 +10,33 @@
       <p class="subtitle ml-1">
         {{ getTime(gift.created_at!) }}
       </p>
-      <div *ngIf="gift.status === 'TOBUY'" class="status tobuy">
+      <div *ngIf="gift.status === 'TOBUY' && canSeeWhat" class="status tobuy">
         Da comprare
       </div>
-      <div *ngIf="gift.status === 'GROUP'" class="status group">
+      <div *ngIf="gift.status === 'GROUP' && canSeeWhat" class="status group">
         In gruppo
-        <img
+        <ng-container *ngIf="canSeeWho">
+          <img
           *ngFor="let b of gift.buyers"
           [src]="
-            '../../../../assets/images/avatars/Avatar_' + (b.user!.icon_profile! + 1) + '.png'
+            '../../../../assets/images/avatars/Avatar_' +
+            (b!.icon_profile! + 1) +
+            '.png'
           "
         />
+        </ng-container>
       </div>
-      <div *ngIf="gift.status === 'BOUGHT'" class="status bought">
+      <div
+        *ngIf="gift.status === 'BOUGHT' && canSeeWhat"
+        class="status bought"
+      >
         Comprato
         <img
           *ngFor="let b of gift.buyers"
           [src]="
-            '../../../../assets/images/avatars/Avatar_' + (b.user!.icon_profile! + 1) + '.png'
+            '../../../../assets/images/avatars/Avatar_' +
+            (b!.icon_profile! + 1) +
+            '.png'
           "
         />
       </div>

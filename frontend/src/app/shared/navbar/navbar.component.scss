@@ -80,4 +80,23 @@
       margin-right: .5em;
     }
   }
+
+  &.navbar-detail-item {
+    height: 160px;
+    justify-content: start;
+    padding-top: .5em;
+
+    .detail-gift-section {
+      img {
+        width: 120px;
+        height: 120px;
+      }
+
+      p {
+        font-size: 2em;
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+  }
 }

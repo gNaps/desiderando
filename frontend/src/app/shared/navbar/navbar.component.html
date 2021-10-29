@@ -81,3 +81,42 @@
     </div>
   </div>
 </div>
+
+<div
+  *ngIf="type === 'DETAIL-ITEM'"
+  class="navbar navbar-minimal navbar-detail-item flex-column"
+>
+  <div class="d-flex justify-content-between w100">
+    <img
+      class="back"
+      src="../../../assets/images/chevron_left.svg"
+      (click)="back()"
+    />
+    <p>
+      {{ title }}
+    </p>
+    <div class="user-box">
+      <div class="avatar">
+        <img
+          [src]="
+            '../../../assets/images/avatars/Avatar_' +
+            (user.icon_profile! + 1) +
+            '.png'
+          "
+        />
+      </div>
+    </div>
+  </div>
+  <div class="d-flex w100 align-items-center detail-gift-section">
+    <img
+      [src]="
+        '../../../assets/images/category/' +
+        (giftCategory) +
+        '.png'
+      "
+    />
+    <p>
+      {{ giftName }}
+    </p>
+  </div>
+</div>

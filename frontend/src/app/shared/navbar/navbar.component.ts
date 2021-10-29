@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Location } from '@angular/common'
+import { Location } from "@angular/common";
 import { AuthService } from "src/app/api/api/auth.service";
 import { User } from "src/app/api/models/user";
 
@@ -17,6 +17,8 @@ export class NavbarComponent implements OnInit {
   @Input() members?: User[];
   @Input() expiration?: Date;
   @Input() giftLefts?: number;
+  @Input() giftName?: string;
+  @Input() giftCategory?: number;
 
   constructor(private authService: AuthService, private location: Location) {
     this.user = this.authService.getLoggedUser();
@@ -25,6 +27,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {}
 
   back(): void {
-    this.location.back()
+    this.location.back();
   }
 }

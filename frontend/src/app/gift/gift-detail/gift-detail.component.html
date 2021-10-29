@@ -1,0 +1,75 @@
+<app-navbar
+  [type]="'DETAIL-ITEM'"
+  [giftName]="gift.name!"
+  [giftCategory]="gift.category!"
+></app-navbar>
+<!-- [title]="giftlist?.name!" -->
+<div class="d-flex justify-content-between align-items-center creator-box">
+  <div class="avatar">
+    <img
+      [src]="
+        '../../../assets/images/avatars/Avatar_' +
+        (gift.created_by.icon_profile! + 1) +
+        '.png'
+      "
+    />
+    <div>
+      <p>Creato da {{ gift.created_by.username }}</p>
+      <p class="secondary-text">{{ getTime(gift.created_at!) }}</p>
+    </div>
+  </div>
+  <div>
+    <button class="button-action-primary" *ngIf="canModify">
+      <img src="../../../assets/images/settings.svg" />
+    </button>
+  </div>
+</div>
+<div class="d-flex flex-column align-items-center info-box">
+  <div class="card">
+    <div class="card-text">
+      <p class="title">Descrizione</p>
+      <p>{{ gift.description }}</p>
+    </div>
+    <img src="../../../assets/images/flag.png" />
+  </div>
+  <div class="card">
+    <div class="card-text">
+      <p class="title">Prezzo</p>
+      <p>{{ gift.price }}</p>
+    </div>
+    <img src="../../../assets/images/credit-card.png" />
+  </div>
+  <div class="card">
+    <div class="card-text">
+      <p class="title">Dove</p>
+      <p>{{ gift.where }}</p>
+    </div>
+    <img src="../../../assets/images/cart.png" />
+  </div>
+  <div class="card" *ngIf="gift.status === 'GROUP' && canSeeWhat">
+    <div class="card-text">
+      <p class="title">Gruppo</p>
+      <app-members
+        *ngIf="canSeeWho"
+        [members]="gift.buyers"
+        [classIndex]="1"
+      ></app-members>
+    </div>
+    <img src="../../../assets/images/cart.png" />
+  </div>
+  <div
+    class="card"
+    *ngIf="gift.status === 'BOUGHT' && gift.buyers.length === 1 && canSeeWhat"
+  >
+    <div class="boughtby-box">
+      <p>Comprato da {{ gift.buyers[0].username! }}</p>
+      <img
+        [src]="
+          '../../../assets/images/avatars/Avatar_' +
+          (gift.buyers[0].icon_profile! + 1) +
+          '.png'
+        "
+      />
+    </div>
+  </div>
+</div>

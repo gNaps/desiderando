@@ -2,38 +2,40 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { AuthService } from "src/app/api/api/auth.service";
 import { Gift } from "src/app/api/models/gift";
-import { Giftlist } from "src/app/api/models/giftlist";
 import { User } from "src/app/api/models/user";
+import * as moment from "moment";
 
 @Component({
-  selector: "app-giftlist-detail",
-  templateUrl: "./giftlist-detail.component.html",
-  styleUrls: ["./giftlist-detail.component.scss"],
+  selector: "app-gift-detail",
+  templateUrl: "./gift-detail.component.html",
+  styleUrls: ["./gift-detail.component.scss"],
 })
-export class GiftlistDetailComponent implements OnInit {
-  giftlist?: Giftlist;
-  giftsLeft?: number;
+export class GiftDetailComponent implements OnInit {
+  gift!: Gift;
   canSeeWhat: boolean = true;
   canSeeWho: boolean = true;
   canModify: boolean = false;
 
   constructor(private route: ActivatedRoute, private authService: AuthService) {
-    this.giftlist = this.route.snapshot.data.giftlist;
-    this.giftsLeft = this.giftlist?.gifts?.filter(
-      (g: Gift) => g.status !== "BOUGHT"
-    ).length;
+    this.gift = this.route.snapshot.data.gift;
+    console.log(this.gift);
   }
 
   ngOnInit(): void {
     const userId = this.authService.getLoggedUser();
-    const user: User = this.giftlist?.members!.find(
+    const user: User = this.gift.giftlist?.members!.find(
       (m) => m.id === userId && m.role === "OWNER"
     )!;
 
     if (user) {
-      this.canSeeWhat = this.giftlist?.what!;
-      this.canSeeWho = this.giftlist?.who!;
+      this.canSeeWhat = this.gift.giftlist?.what!;
+      this.canSeeWho = this.gift.giftlist?.who!;
       this.canModify = true;
     }
+  }
+
+  getTime(time: string) {
+    const date = new Date(time);
+    return moment(date).format("DD/MM/YYYY");
   }
 }

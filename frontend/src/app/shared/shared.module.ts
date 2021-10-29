@@ -36,7 +36,8 @@ import { GiftCardComponent } from './card/gift-card/gift-card.component';
     NavbarComponent,
     SearchInputComponent,
     NavigatorComponent,
-    GiftCardComponent
+    GiftCardComponent,
+    MembersComponent
   ]
 })
 export class SharedModule { }
