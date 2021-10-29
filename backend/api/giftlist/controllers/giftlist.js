@@ -1,7 +1,13 @@
 const slugify = require("slugify");
 const { sanitizeEntity } = require("strapi-utils");
 
-const populate = ["members", "members.user", "gifts", "gifts.buyers", "gifts.buyers.user"];
+const populate = [
+  "members",
+  "members.user",
+  "gifts",
+  "gifts.buyers",
+  "gifts.buyers.user",
+];
 
 module.exports = {
   /**
@@ -60,6 +66,8 @@ module.exports = {
           100
         : 0;
     strapi.services.giftlist.mapEntity(giftlist);
+    console.log(giftlist.gifts);
+    giftlist.gifts.map((g) => strapi.services.gift.mapEntity(g));
     return sanitizeEntity(giftlist, { model: strapi.models.giftlist });
   },
 

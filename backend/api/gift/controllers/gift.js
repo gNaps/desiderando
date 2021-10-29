@@ -2,7 +2,7 @@ const slugify = require("slugify");
 const { sanitizeEntity } = require("strapi-utils");
 
 const populateGiftlist = ["members", "members.user", "gifts"];
-const populateGift = ["buyers", "buyers.user"];
+const populateGift = ["buyers", "buyers.user", "giftlist", "giftlist.members"];
 
 module.exports = {
   /**
@@ -27,8 +27,10 @@ module.exports = {
     }
 
     const gift = await strapi.services.gift.findOne({ id }, populateGift);
+    gift.created_by = await strapi.query('user', 'users-permissions').findOne({id: gift.created_by}, ["id"]);
     strapi.services.gift.mapEntity(gift);
-    return sanitizeEntity(gift, { model: strapi.models.gift });
+    //return sanitizeEntity(gift, { model: strapi.models.gift });
+    return gift;
   },
   /**
    * Create a gift.
@@ -56,6 +58,7 @@ module.exports = {
     gift.slug = slugify(gift.name);
     gift.status = "TOBUY";
     gift.remaining_price = gift.price;
+    gift.created_by = userId;
 
     let entity;
     entity = await strapi.services.gift.create(gift);

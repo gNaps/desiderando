@@ -50,6 +50,20 @@ module.exports = {
       };
     };
 
+    const mapCreator = (entity) => {
+      const { id, email, username, icon_profile } = entity;
+      return {
+        id,
+        email,
+        username,
+        icon_profile,
+      };
+    };
+
     entity.buyers = entity.buyers.map((m) => mapUser(m));
+
+    if(entity.created_by) {
+      entity.created_by = mapCreator(entity.created_by);
+    }
   },
 };
