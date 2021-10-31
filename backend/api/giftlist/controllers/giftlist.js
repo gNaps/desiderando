@@ -28,9 +28,9 @@ module.exports = {
 
     giftlists.map((entity) => {
       entity.gifts_percentage =
-        giftlists.gifts && giftlists.gifts.length > 0
-          ? (giftlists.gifts.filter((g) => g.status === "BOUGHT").length /
-              giftlists.gifts.length) *
+        entity.gifts && entity.gifts.length > 0
+          ? (entity.gifts.filter((g) => g.status === "BOUGHT").length /
+              entity.gifts.length) *
             100
           : 0;
       strapi.services.giftlist.mapEntity(entity);
