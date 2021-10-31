@@ -4,10 +4,9 @@
   background-color: $black;
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
-  padding: 0 1em;
+  padding: 1em;
 
   &.navbar-dashboard {
-    height: 120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,7 +39,6 @@
   }
 
   &.navbar-minimal {
-    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -54,6 +52,7 @@
     p {
       color: $white;
       font-weight: 700;
+      margin: 0;
     }
 
     .back {
@@ -62,7 +61,6 @@
   }
 
   &.navbar-detail-list {
-    height: 180px;
     justify-content: start;
 
     .detail-section-title {
@@ -77,14 +75,13 @@
     .calendar {
       width: 32px;
       height: 32px;
-      margin-right: .5em;
+      margin-right: 0.5em;
     }
   }
 
   &.navbar-detail-item {
-    height: 160px;
     justify-content: start;
-    padding-top: .5em;
+    padding-top: 0.5em;
 
     .detail-gift-section {
       img {

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Giftlist } from "src/app/api/models/giftlist";
+import { getTime } from "src/app/core/utils";
 
 @Component({
   selector: "app-giftlist-card",
@@ -7,6 +8,8 @@ import { Giftlist } from "src/app/api/models/giftlist";
   styleUrls: ["./giftlist-card.component.scss"],
 })
 export class GiftlistCardComponent implements OnInit {
+  getTime = getTime;
+
   @Input() giftlist!: Giftlist;
   @Input() classIndex: number = 0;
   @Input() complete?: boolean;
@@ -22,9 +25,9 @@ export class GiftlistCardComponent implements OnInit {
       case 1:
         return "#a70641";
       case 2:
-        return "#D1A300";
-      case 3:
         return "#2a1488";
+      case 3:
+        return "#D1A300";
       default:
         return "";
     }

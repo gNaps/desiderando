@@ -1,12 +1,13 @@
 @import "../../../../scss/abstract/variables";
 
-.card {
+.giftlist-card {
   min-width: 250px;
   min-height: 125px;
   margin-right: 2em;
   padding: 1em;
   border-radius: $border-radius;
   display: flex;
+  flex-direction: column;
 
   &.complete {
     margin-right: 0;
@@ -18,59 +19,63 @@
     }
   }
 
-  h4,
-  p {
-    margin: 0;
-  }
-
-  h4 {
-    margin-bottom: 0.5em;
-  }
-
-  .left-side,
-  .right-side {
+  .giftlist-card-body {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
 
+    h4,
     p {
-      font-size: 0.9em;
       margin: 0;
     }
 
-    .icon {
-      width: 30px;
-      height: 30px;
-
-      &.gift-icon {
-        -webkit-mask: url(../../../../assets/images/gift.svg) no-repeat center;
-        mask: url(../../../../assets/images/gift.svg) no-repeat center;
-      }
-      &.expiration-icon {
-        -webkit-mask: url(../../../../assets/images/time.svg) no-repeat center;
-        mask: url(../../../../assets/images/time.svg) no-repeat center;
-      }
+    h4 {
+      margin-bottom: 0.5em;
     }
-  }
 
-  .left-side {
-    .gift,
-    .expiration {
+    .left-side,
+    .right-side {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
 
       p {
+        font-size: 0.9em;
         margin: 0;
       }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+
+        &.gift-icon {
+          -webkit-mask: url(../../../../assets/images/gift.svg) no-repeat center;
+          mask: url(../../../../assets/images/gift.svg) no-repeat center;
+        }
+        &.expiration-icon {
+          -webkit-mask: url(../../../../assets/images/time.svg) no-repeat center;
+          mask: url(../../../../assets/images/time.svg) no-repeat center;
+        }
+      }
     }
-  }
 
-  .right-side {
-    flex: 1;
-    align-items: center;
+    .left-side {
+      .gift,
+      .expiration {
+        display: flex;
+        align-items: center;
 
-    &.complete {
-      flex-direction: row;
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .right-side {
+      flex: 1;
+      align-items: center;
+
+      &.complete {
+        flex-direction: row;
+      }
     }
   }
 
@@ -90,8 +95,16 @@
   }
   &.style-2 {
     background-color: $light-purple;
+    color: $dark-purple;
+    .icon {
+      background-color: $dark-purple;
+    }
   }
   &.style-3 {
     background-color: $light-yellow;
+    color: $dark-yellow;
+    .icon {
+      background-color: $dark-yellow;
+    }
   }
 }

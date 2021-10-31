@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { ActivitiesService } from "src/app/api/api/activities.service";
 import { AuthService } from "src/app/api/api/auth.service";
@@ -14,17 +15,20 @@ export class GiftlistListComponent implements OnInit {
   giftlists$: Observable<any> = new Observable();
   activities$: Observable<any> = new Observable();
 
+  giftlistOriginal?: Giftlist[];
   giftlistOwner?: Giftlist[];
   giftlistInvite?: Giftlist[];
 
   constructor(
     private giftlistsService: GiftlistService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     const userId = this.authService.getLoggedUser().id;
     this.giftlistsService.getAllGiftlists().subscribe((data: any) => {
+      this.giftlistOriginal = data;
       this.giftlistOwner = data.filter((g: any) =>
         g.members.some((m: any) => m.id === userId && m.role === "OWNER")
       );
@@ -36,5 +40,13 @@ export class GiftlistListComponent implements OnInit {
 
   trackByFnGiftlist(index: number, item: Giftlist) {
     return item.id;
+  }
+
+  createGiftlist() {
+    this.router.navigate(['giftlist/create']);
+  }
+
+  findOriginalIndex(id: number) {
+    return this.giftlistOriginal?.findIndex(g => g.id === id)!;
   }
 }

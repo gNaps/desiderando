@@ -1,9 +1,12 @@
 <app-navbar [type]="'MINIMAL'" [title]="'Liste desideri'"></app-navbar>
 <div class="d-flex align-items-center container-search">
-  <app-search-input></app-search-input>
-  <button class="button-action-primary">
+  <app-search-input
+    [buttonType]="['NEW-LIST']"
+    (onNewList)="createGiftlist()"
+  ></app-search-input>
+  <!-- <button class="button-action-primary" (click)="createGiftlist()">
     <img src="../../../assets/images/add-round.svg" />
-  </button>
+  </button> -->
 </div>
 <app-navigator [title]="'Liste gestite'"></app-navigator>
 <ng-container *ngIf="giftlistOwner && giftlistOwner.length > 0; else loading">
@@ -18,7 +21,7 @@
       <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration">
         <app-giftlist-card
           [giftlist]="giftlist"
-          [classIndex]="i"
+          [classIndex]="findOriginalIndex(giftlist.id!)"
           [complete]="true"
         ></app-giftlist-card
       ></a>
@@ -38,7 +41,7 @@
       <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration">
         <app-giftlist-card
           [giftlist]="giftlist"
-          [classIndex]="i"
+          [classIndex]="findOriginalIndex(giftlist.id!)"
           [complete]="true"
         ></app-giftlist-card>
       </a>

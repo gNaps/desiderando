@@ -1,0 +1,64 @@
+<app-navbar
+  [type]="'MINIMAL'"
+  [title]="isEdit ? giftlist?.name! : 'Creazione lista'"
+></app-navbar>
+<div class="form-section" [formGroup]="giftlistForm">
+  <h2>{{ "GIFTLIST.NEW_LIST" | translate }}</h2>
+  <label class="custom-label">
+    {{ "GIFTLIST.NAME" | translate }}
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="Digita nome..."
+      formControlName="name"
+    />
+    <app-control-errors controlName="name"></app-control-errors>
+  </label>
+  <div class="d-flex flex-column">
+    <label class="custom-label-checkbox d-flex align-items-center">
+      <input
+        type="checkbox"
+        class="custom-input-checkbox"
+        formControlName="public"
+      />
+      <p>
+        <span class="title">{{ "GIFTLIST.PUBLIC" | translate }}</span> <br />
+        <span class="subtitle">{{
+          "GIFTLIST.PUBLIC_EXPLAIN" | translate
+        }}</span>
+      </p>
+    </label>
+    <label class="custom-label-checkbox d-flex align-items-center">
+      <input
+        type="checkbox"
+        class="custom-input-checkbox"
+        formControlName="what"
+      />
+      <p>
+        <span class="title">{{ "GIFTLIST.WHAT" | translate }}</span> <br />
+        <span class="subtitle">{{ "GIFTLIST.WHAT_EXPLAIN" | translate }}</span>
+      </p>
+    </label>
+    <label class="custom-label-checkbox d-flex align-items-center">
+      <input
+        type="checkbox"
+        class="custom-input-checkbox"
+        formControlName="who"
+      />
+      <p>
+        <span class="title">{{ "GIFTLIST.WHO" | translate }}</span> <br />
+        <span class="subtitle">{{ "GIFTLIST.WHO_EXPLAIN" | translate }}</span>
+      </p>
+    </label>
+    <label class="custom-label">
+      {{ "GIFTLIST.EXPIRE" | translate }}
+      <input type="date" class="custom-input" formControlName="expiration" />
+    </label>
+  </div>
+
+  <div class="button-box">
+    <button class="button button-primary" (click)="save()">
+      {{ "GIFTLIST.SAVE" | translate }}
+    </button>
+  </div>
+</div>

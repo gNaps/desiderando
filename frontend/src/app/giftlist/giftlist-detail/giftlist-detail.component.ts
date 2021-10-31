@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "src/app/api/api/auth.service";
 import { Gift } from "src/app/api/models/gift";
 import { Giftlist } from "src/app/api/models/giftlist";
@@ -17,7 +17,11 @@ export class GiftlistDetailComponent implements OnInit {
   canSeeWho: boolean = true;
   canModify: boolean = false;
 
-  constructor(private route: ActivatedRoute, private authService: AuthService) {
+  constructor(
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.giftlist = this.route.snapshot.data.giftlist;
     this.giftsLeft = this.giftlist?.gifts?.filter(
       (g: Gift) => g.status !== "BOUGHT"
@@ -25,7 +29,7 @@ export class GiftlistDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const userId = this.authService.getLoggedUser();
+    const userId = this.authService.getLoggedUser().id;
     const user: User = this.giftlist?.members!.find(
       (m) => m.id === userId && m.role === "OWNER"
     )!;
@@ -35,5 +39,9 @@ export class GiftlistDetailComponent implements OnInit {
       this.canSeeWho = this.giftlist?.who!;
       this.canModify = true;
     }
+  }
+
+  editGiftlist() {
+    this.router.navigate(["giftlist/edit", this.giftlist?.id!]);
   }
 }

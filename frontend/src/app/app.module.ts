@@ -12,6 +12,7 @@ import { ApiModule } from "./api/api.module";
 import { NgProgressModule } from "ngx-progressbar";
 import { NgProgressHttpModule } from "ngx-progressbar/http";
 import { SharedModule } from "./shared/shared.module";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SharedModule } from "./shared/shared.module";
     TranslateModule.forRoot(),
     NgProgressModule,
     NgProgressHttpModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ],
   providers: [
     {

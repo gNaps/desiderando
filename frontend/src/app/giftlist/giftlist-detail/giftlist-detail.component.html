@@ -6,13 +6,17 @@
   [giftLefts]="giftsLeft"
 ></app-navbar>
 <div class="d-flex align-items-center container-search">
-  <app-search-input></app-search-input>
-  <button class="button-action-primary" *ngIf="canModify">
+  <app-search-input
+    [buttonType]="['NEW-ITEM', 'SETTINGS-LIST']"
+    [canModify]="canModify"
+    (onSettingList)="editGiftlist()"
+  ></app-search-input>
+  <!-- <button class="button-action-primary" *ngIf="canModify">
     <img src="../../../assets/images/add-round.svg" />
   </button>
   <button class="button-action-primary" *ngIf="canModify">
     <img src="../../../assets/images/settings.svg" />
-  </button>
+  </button> -->
 </div>
 <app-navigator [title]="'Desideri'"></app-navigator>
 <div>

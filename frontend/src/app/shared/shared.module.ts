@@ -11,6 +11,8 @@ import { SearchInputComponent } from './search-input/search-input.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { RouterModule } from '@angular/router';
 import { GiftCardComponent } from './card/gift-card/gift-card.component';
+import { SuccessModalComponent } from './modals/success-modal/success-modal.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { GiftCardComponent } from './card/gift-card/gift-card.component';
     NavbarComponent,
     SearchInputComponent,
     NavigatorComponent,
-    GiftCardComponent
+    GiftCardComponent,
+    SuccessModalComponent
   ],
   imports: [
     CommonModule,
     TranslateModule.forChild(),
     NgCircleProgressModule.forRoot(),
-    RouterModule
+    RouterModule,
+    NgbModalModule
   ],
   exports: [
     ControlErrorsComponent,

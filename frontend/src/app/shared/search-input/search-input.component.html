@@ -1,9 +1,39 @@
 <div class="search-input">
-  <label class="custom-label">
+  <label class="custom-label" [ngClass]="getClassWidth()">
     <input
       type="text"
       class="custom-input"
       placeholder="Cerca una lista dei desideri..."
     />
   </label>
+  <button
+    class="button-action-primary"
+    *ngIf="buttonType?.includes('NEW-LIST')"
+    (click)="newList()"
+  >
+    <img src="../../../assets/images/add-round.svg" />
+  </button>
+  <button
+    class="button-action-primary"
+    *ngIf="buttonType?.includes('SETTINGS-LIST')"
+    (click)="settingList()"
+  >
+    <img src="../../../assets/images/settings.svg" />
+  </button>
+  <button
+    class="button-action-primary"
+    *ngIf="buttonType?.includes('NEW-ITEM')"
+    (click)="newItem()"
+  >
+    <img src="../../../assets/images/add-round.svg" />
+  </button>
+  <button
+    class="button-action-primary"
+    *ngIf="buttonType?.includes('SETTINGS-ITEM')"
+    (click)="settingItem()"
+  >
+    <img src="../../../assets/images/settings.svg" />
+  </button>
 </div>
+
+<!-- *ngIf="canModify" -->

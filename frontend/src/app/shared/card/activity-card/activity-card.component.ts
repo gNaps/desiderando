@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from "@angular/core";
 import { Activity } from "src/app/api/models/activity";
 import * as moment from "moment";
 import { User } from "src/app/api/models/user";
+import { TranslateService } from "@ngx-translate/core";
+import { getTimeFromNow } from "src/app/core/utils";
 
 @Component({
   selector: "app-activity-card",
@@ -10,11 +12,12 @@ import { User } from "src/app/api/models/user";
 })
 export class ActivityCardComponent implements OnInit {
   member: User[] = [];
+  getTime = getTimeFromNow;
 
   @Input() activity!: Activity;
   @Input() classIndex: number = 0;
 
-  constructor() {}
+  constructor(private ts: TranslateService) {}
 
   ngOnInit(): void {
     const user: User = {
@@ -25,17 +28,12 @@ export class ActivityCardComponent implements OnInit {
     this.member = [...[], user];
   }
 
-  getTime(time: string) {
-    const value: string = moment(time, "YYYY-MM-DDThh:mm:ss.sssZ").fromNow();
-    const split = value.split(" ");
-    if (split[0] === "an") split[0] = "1";
-    return `${split[0] + split[1].charAt(0)}  ago`;
-  }
-
   getMessage() {
     const username = this.activity.username;
     const action =
-      this.activity.action === "BUY" ? "ha comprato" : "ha aggiunto";
+      this.activity.action === "BUY"
+        ? this.ts.instant("ACTIVITY.BUY")
+        : this.ts.instant("ACTIVITY.ADD");
     return `${username} ${action}`;
   }
 }

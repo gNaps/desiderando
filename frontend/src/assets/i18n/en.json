@@ -1,4 +1,8 @@
 {
+  "ACTIVITY": {
+    "ADD": "has added",
+    "BUY": "has bought"
+  },
   "AUTH": {
     "BIRTH_DATE": "Date of birth",
     "CHOOSE_AVATAR": "Choose avatar",
@@ -19,6 +23,37 @@
     "TITLE": "Give and receive gifts has never been so simple",
     "USERNAME": "Username",
     "USERNAME_EMAIL": "Username or email"
+  },
+  "GIFTS": {
+    "BOUGHT_BY": "Bought by",
+    "CREATED_BY": "Created by",
+    "DESCRIPTION": "Description",
+    "GROUP": "Group",
+    "NO_EXPIRE": "Not expire",
+    "PRICE": "Price",
+    "WHERE": "Where"
+  },
+  "GIFTLIST": {
+    "CREATED": "Lista desideri created",
+    "EXPIRE": "Expire",
+    "NAME": "Name",
+    "NEW_LIST": "New list",
+    "PUBLIC": "Guest users can invites other users",
+    "PUBLIC_EXPLAIN": "(If not selected only owner can invites other users)",
+    "WHAT": "Owners can see wich gifts are bought",
+    "WHAT_EXPLAIN": "(Not recommended if you want keep surprise)",
+    "WHO": "Owners can see who bought a desiderio",
+    "WHO_EXPLAIN": "(Not recommended if you want keep surprise)",
+    "SAVE": "Save",
+    "UPDATED": "Lista desideri updated"
+  },
+  "GLOBAL": {
+    "EXPIRE": "Expire",
+    "GIFTS": "Gifts",
+    "LEFT": "Lefts",
+    "MEMBERS": "Members",
+    "PROCEED": "Proceed",
+    "SUCCESS": "Well done!"
   },
   "VALIDATE": {
     "CONFIRM_PASSWORD": "Passwords are not the same",

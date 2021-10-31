@@ -79,9 +79,15 @@ html {
 }
 
 .no-decoration {
-  text-decoration: none;
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 
 .w100 {
   width: 100%;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";

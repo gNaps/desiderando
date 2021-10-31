@@ -1,4 +1,8 @@
 {
+  "ACTIVITY": {
+    "ADD": "ha aggiunto",
+    "BUY": "ha comprato"
+  },
   "AUTH": {
     "BIRTH_DATE": "Data di nascita",
     "CHOOSE_AVATAR": "Scegli un avatar",
@@ -19,6 +23,37 @@
     "TITLE": "Fare e ricevere regali non è mai stato così semplice",
     "USERNAME": "Username",
     "USERNAME_EMAIL": "Username o email"
+  },
+  "GIFTS": {
+    "BOUGHT_BY": "Comprato da",
+    "CREATED_BY": "Creato da",
+    "DESCRIPTION": "Descrizione",
+    "GROUP": "Gruppo",
+    "NO_EXPIRE": "Non scade",
+    "PRICE": "Prezzo",
+    "WHERE": "Dove"
+  },
+  "GIFTLIST": {
+    "CREATED": "La lista desideri è stata creata",
+    "EXPIRE": "Scadenza",
+    "NAME": "Nome",
+    "NEW_LIST": "Nuova lista",
+    "PUBLIC": "Consenti agli utenti guest di invitare altri utenti",
+    "PUBLIC_EXPLAIN": "(Se non selezionato solamente gli owner potranno invitare altri utenti)",
+    "WHAT": "Consenti agli owner della lista di visualizzare chi ha comprato i desideri",
+    "WHAT_EXPLAIN": "(Sconsigliato se si vuole mantenere l’effetto sorpresa)",
+    "WHO": "Consenti agli owner della lista di visualizzare chi ha comprato i desideri",
+    "WHO_EXPLAIN": "(Sconsigliato se si vuole mantenere l’effetto sorpresa)",
+    "SAVE": "Salva",
+    "UPDATED": "La lista desideri è stata aggiornata"
+  },
+  "GLOBAL": {
+    "EXPIRE": "Scadenza",
+    "GIFTS": "Regali",
+    "LEFT": "Rimangono",
+    "MEMBERS": "Membri",
+    "PROCEED": "Procedi",
+    "SUCCESS": "Ben fatto!"
   },
   "VALIDATE": {
     "CONFIRM_PASSWORD": "Le password non combaciano",
