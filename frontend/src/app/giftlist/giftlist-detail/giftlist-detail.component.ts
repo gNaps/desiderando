@@ -44,4 +44,10 @@ export class GiftlistDetailComponent implements OnInit {
   editGiftlist() {
     this.router.navigate(["giftlist/edit", this.giftlist?.id!]);
   }
+
+  createGift() {
+    this.router.navigate([`../${this.giftlist?.id!}/gift/new`], {
+      relativeTo: this.route.parent,
+    });
+  }
 }

@@ -10,6 +10,7 @@
     [buttonType]="['NEW-ITEM', 'SETTINGS-LIST']"
     [canModify]="canModify"
     (onSettingList)="editGiftlist()"
+    (onNewItem)="createGift()"
   ></app-search-input>
   <!-- <button class="button-action-primary" *ngIf="canModify">
     <img src="../../../assets/images/add-round.svg" />

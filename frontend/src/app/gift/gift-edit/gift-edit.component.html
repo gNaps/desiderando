@@ -1,0 +1,61 @@
+<app-navbar [type]="'MINIMAL'" [title]="getTitle()"></app-navbar>
+<div class="form-section" [formGroup]="giftForm">
+  <h2 *ngIf="!isEdit">{{ "GIFT.NEW" | translate }}</h2>
+  <label class="custom-label">
+    {{ "GIFT.NAME" | translate }}
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="{{'GIFT.PLACEHOLDER.NAME' | translate }}"
+      formControlName="name"
+    />
+    <app-control-errors controlName="name"></app-control-errors>
+  </label>
+  <label class="custom-label">
+    {{ "GIFT.DESCRIPTION" | translate }}
+    <textarea
+      class="custom-input"
+      placeholder="{{'GIFT.PLACEHOLDER.DESCRIPTION' | translate }}"
+      formControlName="description"
+    ></textarea>
+    <app-control-errors controlName="description"></app-control-errors>
+  </label>
+  <label class="custom-label">
+    {{ "GIFT.PRICE" | translate }}
+    <input
+      type="number"
+      class="custom-input"
+      placeholder="{{'GIFT.PLACEHOLDER.PRICE' | translate }}"
+      formControlName="price"
+    />
+    <app-control-errors controlName="price"></app-control-errors>
+  </label>
+  <label class="custom-label">
+    {{ "GIFT.WHERE" | translate }}
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="{{'GIFT.PLACEHOLDER.WHERE' | translate }}"
+      formControlName="where"
+    />
+    <app-control-errors controlName="where"></app-control-errors>
+  </label>
+  <div class="icon-grid mt-4">
+    <div *ngFor="let c of categories">
+      <div
+        class="icon"
+        [ngClass]="{ selected: checkIfSelected(c.id) }"
+        (click)="selectIcon(c.id)"
+      >
+        <img
+          [src]="'../../../assets/images/category/' + (c.id) + '.png'"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="button-box">
+    <button class="button button-primary" (click)="save()">
+      {{ "GIFTLIST.SAVE" | translate }}
+    </button>
+  </div>

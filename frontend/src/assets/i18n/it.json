@@ -24,6 +24,21 @@
     "USERNAME": "Username",
     "USERNAME_EMAIL": "Username o email"
   },
+  "GIFT": {
+    "CREATE": "Creazione desiderio",
+    "EDIT": "Modifica desiderio",
+    "DESCRIPTION": "Descrizione",
+    "NAME": "Nome",
+    "NEW": "Nuovo desiderio",
+    "PRICE": "Prezzo",
+    "PLACEHOLDER": {
+      "DESCRIPTION": "Digita la descrizione del desiderio",
+      "NAME": "Digita il nome del desiderio",
+      "PRICE": "Digita il prezzo del desiderio",
+      "WHERE": "Digita dove si può comprare"
+    },
+    "WHERE": "Dove"
+  },
   "GIFTS": {
     "BOUGHT_BY": "Comprato da",
     "CREATED_BY": "Creato da",
@@ -35,9 +50,13 @@
   },
   "GIFTLIST": {
     "CREATED": "La lista desideri è stata creata",
+    "EDIT_LIST": "Modifica lista",
     "EXPIRE": "Scadenza",
     "NAME": "Nome",
     "NEW_LIST": "Nuova lista",
+    "PLACEHOLDER": {
+      "NAME": "Digita il nome della lista"
+    },
     "PUBLIC": "Consenti agli utenti guest di invitare altri utenti",
     "PUBLIC_EXPLAIN": "(Se non selezionato solamente gli owner potranno invitare altri utenti)",
     "WHAT": "Consenti agli owner della lista di visualizzare chi ha comprato i desideri",

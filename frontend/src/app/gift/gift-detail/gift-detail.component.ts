@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "src/app/api/api/auth.service";
 import { Gift } from "src/app/api/models/gift";
 import { User } from "src/app/api/models/user";
@@ -17,15 +17,18 @@ export class GiftDetailComponent implements OnInit {
   canModify: boolean = false;
   getTime = getTime;
 
-  constructor(private route: ActivatedRoute, private authService: AuthService) {
+  constructor(
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.gift = this.route.snapshot.data.gift;
-    console.log(this.gift);
   }
 
   ngOnInit(): void {
     const userId = this.authService.getLoggedUser().id;
     const user: User = this.gift.giftlist?.members!.find(
-      (m) => m.id === userId && m.role === "OWNER"
+      (m: any) => m.user === userId && m.role === "OWNER"
     )!;
 
     if (user) {
@@ -33,5 +36,9 @@ export class GiftDetailComponent implements OnInit {
       this.canSeeWho = this.gift.giftlist?.who!;
       this.canModify = true;
     }
+  }
+
+  editGift() {
+    this.router.navigate([`giftlist/${this.gift.giftlist?.id!}/gift/edit`, this.gift.id]);
   }
 }

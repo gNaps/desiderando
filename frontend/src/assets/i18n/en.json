@@ -24,6 +24,21 @@
     "USERNAME": "Username",
     "USERNAME_EMAIL": "Username or email"
   },
+  "GIFT": {
+    "CREATE": "Create desiderio",
+    "EDIT": "Edit desiderio",
+    "DESCRIPTION": "Description",
+    "NAME": "Name",
+    "NEW": "New desiderio",
+    "PRICE": "Price",
+    "PLACEHOLDER": {
+      "DESCRIPTION": "Digit description of desiderio",
+      "NAME": "Digit name of desiderio",
+      "PRICE": "Digit price of desiderio",
+      "WHERE": "Digit where can buy"
+    },
+    "WHERE": "Where"
+  },
   "GIFTS": {
     "BOUGHT_BY": "Bought by",
     "CREATED_BY": "Created by",
@@ -35,9 +50,13 @@
   },
   "GIFTLIST": {
     "CREATED": "Lista desideri created",
+    "EDIT_LIST": "Edit lista",
     "EXPIRE": "Expire",
     "NAME": "Name",
     "NEW_LIST": "New list",
+    "PLACEHOLDER": {
+      "NAME": "Digit name of list"
+    },
     "PUBLIC": "Guest users can invites other users",
     "PUBLIC_EXPLAIN": "(If not selected only owner can invites other users)",
     "WHAT": "Owners can see wich gifts are bought",

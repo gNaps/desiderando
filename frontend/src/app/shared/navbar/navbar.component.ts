@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
 import { AuthService } from "src/app/api/api/auth.service";
 import { User } from "src/app/api/models/user";
+import { getTime } from "src/app/core/utils";
 
 type navbarType = "DASHBOARD" | "MINIMAL" | "DETAIL-LIST" | "DETAIL-ITEM";
 
@@ -12,6 +13,8 @@ type navbarType = "DASHBOARD" | "MINIMAL" | "DETAIL-LIST" | "DETAIL-ITEM";
 })
 export class NavbarComponent implements OnInit {
   user!: User;
+  getTime = getTime;
+  
   @Input() type: navbarType = "DASHBOARD";
   @Input() title: string = "";
   @Input() members?: User[];

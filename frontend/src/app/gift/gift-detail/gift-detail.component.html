@@ -4,7 +4,6 @@
   [giftCategory]="gift.category!"
   [title]="gift.giftlist.name!"
 ></app-navbar>
-<!-- [title]="giftlist?.name!" -->
 <div class="d-flex justify-content-between align-items-center creator-box">
   <div class="avatar">
     <img
@@ -20,7 +19,11 @@
     </div>
   </div>
   <div>
-    <button class="button-action-primary" *ngIf="canModify">
+    <button
+      class="button-action-primary"
+      *ngIf="canModify"
+      (click)="editGift()"
+    >
       <img src="../../../assets/images/settings.svg" />
     </button>
   </div>

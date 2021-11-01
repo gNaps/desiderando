@@ -72,7 +72,7 @@
       <p class="detail-section-title">{{ "GLOBAL.EXPIRE" | translate }}</p>
       <div class="d-flex align-items-center">
         <img class="calendar" src="../../../assets/images/calendar.svg" />
-        <p class="detail-section">{{ expiration ? expiration : "Mai" }}</p>
+        <p class="detail-section">{{ expiration ? getTime(expiration.toString()) : "Mai" }}</p>
       </div>
     </div>
     <div class="d-flex flex-column align-items-center">

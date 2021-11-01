@@ -3,13 +3,14 @@
   [title]="isEdit ? giftlist?.name! : 'Creazione lista'"
 ></app-navbar>
 <div class="form-section" [formGroup]="giftlistForm">
-  <h2>{{ "GIFTLIST.NEW_LIST" | translate }}</h2>
+  <h2 *ngIf="!isEdit">{{ "GIFTLIST.NEW_LIST" | translate }}</h2>
+  <h2 *ngIf="isEdit">{{ "GIFTLIST.EDIT_LIST" | translate }}</h2>
   <label class="custom-label">
     {{ "GIFTLIST.NAME" | translate }}
     <input
       type="text"
       class="custom-input"
-      placeholder="Digita nome..."
+      placeholder="{{ 'GIFTLIST.PLACEHOLDER.NAME' | translate }}"
       formControlName="name"
     />
     <app-control-errors controlName="name"></app-control-errors>
