@@ -85,6 +85,10 @@ module.exports = {
       ctx.throw(400, "Name is missing");
     }
 
+    if(lista.expiration === "") {
+      lista.expiration = null;
+    }
+
     lista.slug = slugify(lista.name);
     entity = await strapi.services.giftlist.create(lista);
 
