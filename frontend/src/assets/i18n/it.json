@@ -26,7 +26,9 @@
   },
   "GIFT": {
     "CREATE": "Creazione desiderio",
+    "CREATED": "Il desiderio è stato aggiunto alla lista",
     "EDIT": "Modifica desiderio",
+    "DELETE": "Elimina desiderio",
     "DESCRIPTION": "Descrizione",
     "NAME": "Nome",
     "NEW": "Nuovo desiderio",
@@ -52,6 +54,7 @@
     "CREATED": "La lista desideri è stata creata",
     "EDIT_LIST": "Modifica lista",
     "EXPIRE": "Scadenza",
+    "DELETE": "Elimina lista",
     "NAME": "Nome",
     "NEW_LIST": "Nuova lista",
     "PLACEHOLDER": {

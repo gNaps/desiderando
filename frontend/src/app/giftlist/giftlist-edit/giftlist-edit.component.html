@@ -61,5 +61,8 @@
     <button class="button button-primary" (click)="save()">
       {{ "GIFTLIST.SAVE" | translate }}
     </button>
+    <button class="button button-secondary" (click)="delete()" *ngIf="isEdit">
+      {{ "GIFTLIST.DELETE" | translate }}
+    </button>
   </div>
 </div>

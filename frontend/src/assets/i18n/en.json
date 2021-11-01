@@ -26,7 +26,9 @@
   },
   "GIFT": {
     "CREATE": "Create desiderio",
+    "CREATED": "Desiderio is now in the list",
     "EDIT": "Edit desiderio",
+    "DELETE": "Delete desiderio",
     "DESCRIPTION": "Description",
     "NAME": "Name",
     "NEW": "New desiderio",
@@ -52,6 +54,7 @@
     "CREATED": "Lista desideri created",
     "EDIT_LIST": "Edit lista",
     "EXPIRE": "Expire",
+    "DELETE": "Delete list",
     "NAME": "Name",
     "NEW_LIST": "New list",
     "PLACEHOLDER": {

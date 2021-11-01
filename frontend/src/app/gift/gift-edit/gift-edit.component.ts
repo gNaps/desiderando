@@ -29,6 +29,7 @@ export class GiftEditComponent implements OnInit {
     private modalService: NgbModal,
     private ts: TranslateService
   ) {
+    this.giftlist = this.route.snapshot.data.giftlist;
     this.gift = this.route.snapshot.data.gift;
   }
 
@@ -36,8 +37,8 @@ export class GiftEditComponent implements OnInit {
     this.giftForm = new FormGroup({
       name: new FormControl("", [Validators.required]),
       description: new FormControl(""),
-      price: new FormControl(0),
-      where: new FormControl(""),
+      price: new FormControl(0, [Validators.required, Validators.min(1)]),
+      where: new FormControl("", [Validators.required]),
       category: new FormControl(1),
       giftlist: new FormControl(this.giftlist?.id),
     });
@@ -96,7 +97,6 @@ export class GiftEditComponent implements OnInit {
               modalRef.componentInstance.message =
                 this.ts.instant("GIFT.CREATED");
               setTimeout(() => {
-                console.log("data returns", data);
                 this.router.navigate([
                   `giftlist/${this.giftlist?.id}/gift/${data.id}`,
                 ]);
@@ -117,5 +117,22 @@ export class GiftEditComponent implements OnInit {
     return this.isEdit
       ? this.ts.instant("GIFT.EDIT")
       : this.ts.instant("GIFT.CREATE");
+  }
+
+  delete() {
+    this.giftService
+      .deleteGift(this.gift?.id!)
+      .pipe(
+        tap(() => {
+          const modalRef = this.modalService.open(SuccessModalComponent, {
+            centered: true,
+          });
+          modalRef.componentInstance.message = this.ts.instant("GIFT.DELETED");
+          setTimeout(() => {
+            this.router.navigate([`giftlist/${this.gift?.giftlist?.id}`]);
+          }, 500);
+        })
+      )
+      .subscribe();
   }
 }

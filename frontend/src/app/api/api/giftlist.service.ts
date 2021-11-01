@@ -49,4 +49,13 @@ export class GiftlistService {
       }
     );
   }
+
+  deleteGiftlist(id: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    });
+    return this.httpClient.delete(`${environment.apiUrl}/giftlists/${id}`, {
+      headers: headers,
+    });
+  }
 }

@@ -6,7 +6,7 @@
     <input
       type="text"
       class="custom-input"
-      placeholder="{{'GIFT.PLACEHOLDER.NAME' | translate }}"
+      placeholder="{{ 'GIFT.PLACEHOLDER.NAME' | translate }}"
       formControlName="name"
     />
     <app-control-errors controlName="name"></app-control-errors>
@@ -15,7 +15,7 @@
     {{ "GIFT.DESCRIPTION" | translate }}
     <textarea
       class="custom-input"
-      placeholder="{{'GIFT.PLACEHOLDER.DESCRIPTION' | translate }}"
+      placeholder="{{ 'GIFT.PLACEHOLDER.DESCRIPTION' | translate }}"
       formControlName="description"
     ></textarea>
     <app-control-errors controlName="description"></app-control-errors>
@@ -25,7 +25,7 @@
     <input
       type="number"
       class="custom-input"
-      placeholder="{{'GIFT.PLACEHOLDER.PRICE' | translate }}"
+      placeholder="{{ 'GIFT.PLACEHOLDER.PRICE' | translate }}"
       formControlName="price"
     />
     <app-control-errors controlName="price"></app-control-errors>
@@ -35,7 +35,7 @@
     <input
       type="text"
       class="custom-input"
-      placeholder="{{'GIFT.PLACEHOLDER.WHERE' | translate }}"
+      placeholder="{{ 'GIFT.PLACEHOLDER.WHERE' | translate }}"
       formControlName="where"
     />
     <app-control-errors controlName="where"></app-control-errors>
@@ -47,15 +47,16 @@
         [ngClass]="{ selected: checkIfSelected(c.id) }"
         (click)="selectIcon(c.id)"
       >
-        <img
-          [src]="'../../../assets/images/category/' + (c.id) + '.png'"
-        />
+        <img [src]="'../../../assets/images/category/' + c.id + '.png'" />
       </div>
     </div>
   </div>
 </div>
 <div class="button-box">
-    <button class="button button-primary" (click)="save()">
-      {{ "GIFTLIST.SAVE" | translate }}
-    </button>
-  </div>
+  <button class="button button-primary" (click)="save()">
+    {{ "GIFTLIST.SAVE" | translate }}
+  </button>
+  <button class="button button-secondary" (click)="delete()" *ngIf="isEdit">
+    {{ "GIFTLIST.DELETE" | translate }}
+  </button>
+</div>

@@ -57,9 +57,8 @@ export class GiftlistEditComponent implements OnInit {
               const modalRef = this.modalService.open(SuccessModalComponent, {
                 centered: true,
               });
-              modalRef.componentInstance.message = this.ts.instant(
-                "GIFTLIST.UPDATED"
-              );
+              modalRef.componentInstance.message =
+                this.ts.instant("GIFTLIST.UPDATED");
               setTimeout(() => {
                 this.router.navigate(["giftlist"]);
               }, 500);
@@ -75,9 +74,8 @@ export class GiftlistEditComponent implements OnInit {
               const modalRef = this.modalService.open(SuccessModalComponent, {
                 centered: true,
               });
-              modalRef.componentInstance.message = this.ts.instant(
-                "GIFTLIST.CREATED"
-              );
+              modalRef.componentInstance.message =
+                this.ts.instant("GIFTLIST.CREATED");
               setTimeout(() => {
                 this.router.navigate(["giftlist"]);
               }, 500);
@@ -91,5 +89,22 @@ export class GiftlistEditComponent implements OnInit {
         control.markAsTouched({ onlySelf: true });
       });
     }
+  }
+
+  delete() {
+    this.giftlistService
+      .deleteGiftlist(this.giftlist?.id!)
+      .pipe(
+        tap(() => {
+          const modalRef = this.modalService.open(SuccessModalComponent, {
+            centered: true,
+          });
+          modalRef.componentInstance.message = this.ts.instant("GIFT.DELETED");
+          setTimeout(() => {
+            this.router.navigate([`giftlist`]);
+          }, 500);
+        })
+      )
+      .subscribe();
   }
 }
