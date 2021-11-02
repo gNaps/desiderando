@@ -1,9 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { tap } from "rxjs/operators";
 import { AuthService } from "src/app/api/api/auth.service";
+import { GiftlistService } from "src/app/api/api/giftlist.service";
 import { Gift } from "src/app/api/models/gift";
 import { Giftlist } from "src/app/api/models/giftlist";
 import { User } from "src/app/api/models/user";
+import { MembersModalComponent } from "src/app/shared/modals/members-modal/members-modal.component";
 
 @Component({
   selector: "app-giftlist-detail",
@@ -20,7 +24,9 @@ export class GiftlistDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal,
+    public giftlistService: GiftlistService
   ) {
     this.giftlist = this.route.snapshot.data.giftlist;
     this.giftsLeft = this.giftlist?.gifts?.filter(
@@ -34,6 +40,7 @@ export class GiftlistDetailComponent implements OnInit {
       (m) => m.id === userId && m.role === "OWNER"
     )!;
 
+    console.log(user)
     if (user) {
       this.canSeeWhat = this.giftlist?.what!;
       this.canSeeWho = this.giftlist?.who!;
@@ -48,6 +55,36 @@ export class GiftlistDetailComponent implements OnInit {
   createGift() {
     this.router.navigate([`../${this.giftlist?.id!}/gift/new`], {
       relativeTo: this.route.parent,
+    });
+  }
+
+  openMembers() {
+    const modalRef = this.modalService.open(MembersModalComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.members = this.giftlist?.members;
+    modalRef.componentInstance.canModify = this.canModify;
+    modalRef.componentInstance.onInvite.subscribe((user: any) => {
+      this.giftlistService
+        .inviteUser(user, this.giftlist?.id!)
+        .pipe(
+          tap((giftlist: Giftlist) => {
+            this.giftlist!.members = [...giftlist.members!];
+            modalRef.componentInstance.members = giftlist.members!;
+          })
+        )
+        .subscribe();
+    });
+    modalRef.componentInstance.onRemoveInvite.subscribe((id: number) => {
+      this.giftlistService
+        .removeUser({ user: id }, this.giftlist?.id!)
+        .pipe(
+          tap((giftlist: Giftlist) => {
+            this.giftlist!.members = [...giftlist.members!];
+            modalRef.componentInstance.members = giftlist.members!;
+          })
+        )
+        .subscribe();
     });
   }
 }

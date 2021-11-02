@@ -12,7 +12,9 @@ import { NavigatorComponent } from './navigator/navigator.component';
 import { RouterModule } from '@angular/router';
 import { GiftCardComponent } from './card/gift-card/gift-card.component';
 import { SuccessModalComponent } from './modals/success-modal/success-modal.component';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapse, NgbCollapseModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { MembersModalComponent } from './modals/members-modal/members-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,14 +26,18 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     SearchInputComponent,
     NavigatorComponent,
     GiftCardComponent,
-    SuccessModalComponent
+    SuccessModalComponent,
+    MembersModalComponent
   ],
   imports: [
     CommonModule,
     TranslateModule.forChild(),
     NgCircleProgressModule.forRoot(),
     RouterModule,
-    NgbModalModule
+    NgbModalModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgbCollapseModule
   ],
   exports: [
     ControlErrorsComponent,

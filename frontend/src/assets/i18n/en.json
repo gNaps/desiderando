@@ -70,12 +70,24 @@
     "UPDATED": "Lista desideri updated"
   },
   "GLOBAL": {
+    "CLOSE": "Close",
     "EXPIRE": "Expire",
     "GIFTS": "Gifts",
     "LEFT": "Lefts",
     "MEMBERS": "Members",
     "PROCEED": "Proceed",
     "SUCCESS": "Well done!"
+  },
+  "MODAL": {
+    "MEMBERS": {
+      "ADD": "Add",
+      "GUEST": "Guest",
+      "INVITE": "Invite",
+      "INVITE_USER": "Invite new user to the list",
+      "OWNER": "Owner",
+      "ROLE": "Role",
+      "USERNAME": "Username"
+    }
   },
   "VALIDATE": {
     "CONFIRM_PASSWORD": "Passwords are not the same",

@@ -70,12 +70,24 @@
     "UPDATED": "La lista desideri è stata aggiornata"
   },
   "GLOBAL": {
+    "CLOSE": "Chiudi",
     "EXPIRE": "Scadenza",
     "GIFTS": "Regali",
     "LEFT": "Rimangono",
     "MEMBERS": "Membri",
     "PROCEED": "Procedi",
     "SUCCESS": "Ben fatto!"
+  },
+  "MODAL": {
+    "MEMBERS": {
+      "ADD": "Aggiungi",
+      "GUEST": "Ospite",
+      "INVITE": "Invita",
+      "INVITE_USER": "Invita un nuovo utente alla lista",
+      "OWNER": "Gestore",
+      "ROLE": "Ruolo",
+      "USERNAME": "Username"
+    }
   },
   "VALIDATE": {
     "CONFIRM_PASSWORD": "Le password non combaciano",

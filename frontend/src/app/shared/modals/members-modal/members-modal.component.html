@@ -1,0 +1,83 @@
+<div class="modal-header align-items-center">
+  <h4 class="modal-title">Members</h4>
+  <i class="ri-close-fill" (click)="activeModal.dismiss('Close click')"></i>
+</div>
+<div class="modal-body">
+  <div
+    *ngFor="let m of members"
+    class="d-flex justify-content-between align-items-center"
+  >
+    <div class="member-avatar">
+      <img
+        [src]="
+          '../../../../assets/images/avatars/Avatar_' +
+          (m.icon_profile + 1) +
+          '.png'
+        "
+      />
+    </div>
+    <p>{{ m.username }}</p>
+    <div class="action d-flex">
+      <p [ngClass]="{ owner: m.role === 'OWNER', guest: m.role === 'GUEST' }">
+        {{ m.role }}
+      </p>
+      <i class="ri-user-unfollow-line" (click)="removeInvite(m.id)" *ngIf="canModify"></i>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center my-3" *ngIf="canModify">
+    <button type="button" class="button button-primary" (click)="collapse.toggle()">
+      {{ "MODAL.MEMBERS.ADD" | translate }}
+      <i class="ri-user-add-line"></i>
+    </button>
+  </div>
+  <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div [formGroup]="inviteUserForm">
+      <p>
+        {{ "MODAL.MEMBERS.INVITE_USER" | translate }}
+      </p>
+      <label class="custom-label">
+        {{ "MODAL.MEMBERS.USERNAME" | translate }}
+        <input type="text" class="custom-input" formControlName="username" />
+      </label>
+      <app-control-errors controlName="username"></app-control-errors>
+      <label class="custom-label">
+        {{ "MODAL.MEMBERS.ROLE" | translate }}
+      </label>
+      <div class="d-flex justify-content-around">
+        <label class="custom-label-checkbox">
+          <input
+            type="radio"
+            value="GUEST"
+            class="custom-input-checkbox"
+            formControlName="role"
+          />
+          {{ "MODAL.MEMBERS.GUEST" | translate }}
+        </label>
+        <label class="custom-label-checkbox">
+          <input
+            type="radio"
+            value="OWNER"
+            class="custom-input-checkbox"
+            formControlName="role"
+          />
+          {{ "MODAL.MEMBERS.OWNER" | translate }}
+        </label>
+      </div>
+      <app-control-errors controlName="role"></app-control-errors>
+    </div>
+    <div class="d-flex justify-content-center my-3">
+      <button class="button button-secondary" (click)="invites()">
+        {{ "MODAL.MEMBERS.INVITE" | translate }}
+      </button>
+    </div>
+  </div>
+  <!-- <div class="modal-footer">
+    <button
+      class="button button-primary"
+      (click)="activeModal.dismiss('Close click')"
+    >
+      {{ "GLOBAL.CLOSE" | translate }}
+    </button>
+    <button class="button button-secondary" (click)="saveMembers()">Save</button> 
+  </div> -->
+</div>

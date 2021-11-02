@@ -1,0 +1,36 @@
+@import "../../../../scss/abstract/variables";
+
+.modal-header {
+  background-color: $black;
+  color: $white;
+}
+
+.member-avatar {
+  width: 80px;
+  height: 80px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.action {
+  i {
+    font-size: 1.3em;
+    color: $red;
+    margin: 0 .5em;
+  }
+}
+
+.owner {
+  background-color: $light-purple;
+  color: $purple;
+  padding: 0.3em;
+  border-radius: 5px;
+}
+.guest {
+  background-color: $light-yellow;
+  color: $yellow;
+  padding: 0.3em;
+  border-radius: 5px;
+}

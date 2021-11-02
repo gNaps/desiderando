@@ -4,6 +4,7 @@
   [members]="giftlist?.members"
   [expiration]="giftlist?.expiration"
   [giftLefts]="giftsLeft"
+  (onOpenMembers)="openMembers()"
 ></app-navbar>
 <div class="d-flex align-items-center container-search">
   <app-search-input

@@ -66,7 +66,7 @@
   <div class="d-flex justify-content-between w100">
     <div class="d-flex flex-column align-items-center">
       <p class="detail-section-title">{{ "GLOBAL.MEMBERS" | translate }}</p>
-      <app-members [members]="members!" [styleNavbar]="true"></app-members>
+      <app-members [members]="members!" [styleNavbar]="true" (click)="activeMembers()"></app-members>
     </div>
     <div class="d-flex flex-column align-items-center">
       <p class="detail-section-title">{{ "GLOBAL.EXPIRE" | translate }}</p>

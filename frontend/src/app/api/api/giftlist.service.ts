@@ -58,4 +58,30 @@ export class GiftlistService {
       headers: headers,
     });
   }
+
+  inviteUser(user: any, id: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    });
+    return this.httpClient.put(
+      `${environment.apiUrl}/giftlists/invite/${id}`,
+      user,
+      {
+        headers: headers,
+      }
+    );
+  }
+
+  removeUser(user: any, id: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    });
+    return this.httpClient.put(
+      `${environment.apiUrl}/giftlists/removeInvite/${id}`,
+      user,
+      {
+        headers: headers,
+      }
+    );
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 import { Location } from "@angular/common";
 import { AuthService } from "src/app/api/api/auth.service";
 import { User } from "src/app/api/models/user";
@@ -14,7 +14,7 @@ type navbarType = "DASHBOARD" | "MINIMAL" | "DETAIL-LIST" | "DETAIL-ITEM";
 export class NavbarComponent implements OnInit {
   user!: User;
   getTime = getTime;
-  
+
   @Input() type: navbarType = "DASHBOARD";
   @Input() title: string = "";
   @Input() members?: User[];
@@ -22,6 +22,8 @@ export class NavbarComponent implements OnInit {
   @Input() giftLefts?: number;
   @Input() giftName?: string;
   @Input() giftCategory?: number;
+
+  @Output() onOpenMembers: EventEmitter<void> = new EventEmitter();
 
   constructor(private authService: AuthService, private location: Location) {
     this.user = this.authService.getLoggedUser();
@@ -31,5 +33,9 @@ export class NavbarComponent implements OnInit {
 
   back(): void {
     this.location.back();
+  }
+
+  activeMembers() {
+    this.onOpenMembers.emit();
   }
 }
