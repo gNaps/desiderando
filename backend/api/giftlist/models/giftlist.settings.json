@@ -38,6 +38,9 @@
     "members": {
       "collection": "giftlist-users-role",
       "via": "giftlist"
+    },
+    "owner_can_buy": {
+      "type": "boolean"
     }
   }
 }
