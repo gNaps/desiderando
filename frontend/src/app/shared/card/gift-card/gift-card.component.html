@@ -17,20 +17,17 @@
         {{ "GIFT.STATUS.GROUP" | translate }}
         <ng-container *ngIf="canSeeWho">
           <img
-          *ngFor="let b of gift.buyers"
-          [src]="
-            '../../../../assets/images/avatars/Avatar_' +
-            (b!.icon_profile! + 1) +
-            '.png'
-          "
-        />
+            *ngFor="let b of gift.buyers"
+            [src]="
+              '../../../../assets/images/avatars/Avatar_' +
+              (b!.icon_profile! + 1) +
+              '.png'
+            "
+          />
         </ng-container>
       </div>
-      <div
-        *ngIf="gift.status === 'BOUGHT' && canSeeWhat"
-        class="status bought"
-      >
-        Comprato
+      <div *ngIf="gift.status === 'BOUGHT' && canSeeWhat" class="status bought">
+        {{ "GIFT.STATUS.BOUGHT" | translate }}
         <img
           *ngFor="let b of gift.buyers"
           [src]="

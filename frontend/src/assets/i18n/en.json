@@ -25,6 +25,7 @@
     "USERNAME_EMAIL": "Username or email"
   },
   "GIFT": {
+    "BOUGHT": "This desiderio is now your gift",
     "CREATE": "Create desiderio",
     "CREATED": "Desiderio is now in the list",
     "EDIT": "Edit desiderio",

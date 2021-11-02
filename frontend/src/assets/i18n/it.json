@@ -25,6 +25,7 @@
     "USERNAME_EMAIL": "Username o email"
   },
   "GIFT": {
+    "BOUGHT": "Questo desiderio ora è il tuo regalo",
     "CREATE": "Creazione desiderio",
     "CREATED": "Il desiderio è stato aggiunto alla lista",
     "EDIT": "Modifica desiderio",
@@ -41,7 +42,8 @@
     },
     "STATUS": {
       "TOBUY": "Da comprare",
-      "GROUP": "In gruppo"
+      "GROUP": "In gruppo",
+      "BOUGHT": "Comprato"
     },
     "WHERE": "Dove"
   },

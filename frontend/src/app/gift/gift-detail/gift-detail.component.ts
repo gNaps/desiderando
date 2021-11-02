@@ -86,10 +86,7 @@ export class GiftDetailComponent implements OnInit {
               }
             );
             modalRefSuccess.componentInstance.message =
-              this.ts.instant("GIFT.BUYED");
-            setTimeout(() => {
-              modalRefSuccess.close();
-            }, 2000);
+              this.ts.instant("GIFT.BOUGHT");
           })
         )
         .subscribe();
