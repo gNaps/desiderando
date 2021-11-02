@@ -13,13 +13,15 @@ import { NgProgressModule } from "ngx-progressbar";
 import { NgProgressHttpModule } from "ngx-progressbar/http";
 import { SharedModule } from "./shared/shared.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ActivityComponent } from './activity/activity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     DashboardComponent,
-    FooterComponent
+    FooterComponent,
+    ActivityComponent
   ],
   imports: [
     BrowserModule,

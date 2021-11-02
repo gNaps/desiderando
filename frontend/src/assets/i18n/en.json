@@ -1,7 +1,8 @@
 {
   "ACTIVITY": {
     "ADD": "has added",
-    "BUY": "has bought"
+    "BUY": "has bought",
+    "NAVIGATOR": "Activities"
   },
   "AUTH": {
     "BIRTH_DATE": "Date of birth",

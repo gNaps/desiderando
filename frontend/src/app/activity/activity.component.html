@@ -1,0 +1,8 @@
+<app-navbar [type]="'MINIMAL'"></app-navbar>
+<div class="d-flex flex-column p-4">
+  <h4>{{ "ACTIVITY.NAVIGATOR" | translate }}</h4>
+  <app-activity-card
+    *ngFor="let a of activities"
+    [activity]="a"
+  ></app-activity-card>
+</div>

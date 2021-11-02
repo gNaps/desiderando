@@ -1,7 +1,8 @@
 {
   "ACTIVITY": {
     "ADD": "ha aggiunto",
-    "BUY": "ha comprato"
+    "BUY": "ha comprato",
+    "NAVIGATOR": "Notifiche"
   },
   "AUTH": {
     "BIRTH_DATE": "Data di nascita",

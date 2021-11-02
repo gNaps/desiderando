@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { ActivityComponent } from "./activity/activity.component";
+import { ActivityResolver } from "./activity/activity.resolver";
 import { AuthGuard } from "./core/auth.guard";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LayoutComponent } from "./layout/layout.component";
@@ -22,6 +24,14 @@ const routes: Routes = [
             canActivate: [AuthGuard],
             path: "dashboard",
             component: DashboardComponent,
+          },
+          {
+            canActivate: [AuthGuard],
+            path: "activity",
+            component: ActivityComponent,
+            resolve: {
+              activity: ActivityResolver,
+            }
           },
           {
             path: "giftlist",
