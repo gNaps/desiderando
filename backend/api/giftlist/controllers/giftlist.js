@@ -66,7 +66,6 @@ module.exports = {
           100
         : 0;
     strapi.services.giftlist.mapEntity(giftlist);
-    console.log(giftlist.gifts);
     giftlist.gifts.map((g) => strapi.services.gift.mapEntity(g));
     return sanitizeEntity(giftlist, { model: strapi.models.giftlist });
   },
@@ -85,7 +84,7 @@ module.exports = {
       ctx.throw(400, "Name is missing");
     }
 
-    if(lista.expiration === "") {
+    if (lista.expiration === "") {
       lista.expiration = null;
     }
 
@@ -157,7 +156,6 @@ module.exports = {
     }
 
     giftlist.members.map(async (m) => {
-      console.log(m);
       await strapi.services["giftlist-users-role"].delete({ id: m.id });
     });
 
@@ -222,6 +220,8 @@ module.exports = {
       { id: giftlist.id },
       populate
     );
+
+    strapi.services.giftlist.mapEntity(newGiftlist);
     return sanitizeEntity(newGiftlist, { model: strapi.models.giftlist });
   },
   /**
@@ -258,9 +258,11 @@ module.exports = {
     });
 
     const newGiftlist = await strapi.services.giftlist.findOne(
-      giftlist.id,
+      { id: listId },
       populate
     );
+
+    strapi.services.giftlist.mapEntity(newGiftlist);
     return sanitizeEntity(newGiftlist, { model: strapi.models.giftlist });
   },
 };
