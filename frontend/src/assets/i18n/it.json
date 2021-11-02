@@ -117,6 +117,10 @@
       "USERNAME": "Username"
     }
   },
+  "NAVBAR": {
+    "HI": "Ciao",
+    "WELCOME": "Bentornato su desiderando"
+  },
   "VALIDATE": {
     "CONFIRM_PASSWORD": "Le password non combaciano",
     "EMAIL": "E-mail non valida",

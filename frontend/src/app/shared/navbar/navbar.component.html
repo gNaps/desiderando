@@ -10,8 +10,10 @@
       />
     </div>
     <div class="info-box">
-      <p class="big-text">Ciao {{ user.username }}</p>
-      <p class="secondary-text">2 liste in sospeso</p>
+      <p class="big-text">{{ "NAVBAR.HI" | translate }} {{ user.username }}</p>
+      <p class="secondary-text">
+        {{ "NAVBAR.WELCOME" | translate }}
+      </p>
     </div>
   </div>
 </div>
@@ -66,13 +68,19 @@
   <div class="d-flex justify-content-between w100">
     <div class="d-flex flex-column align-items-center">
       <p class="detail-section-title">{{ "GLOBAL.MEMBERS" | translate }}</p>
-      <app-members [members]="members!" [styleNavbar]="true" (click)="activeMembers()"></app-members>
+      <app-members
+        [members]="members!"
+        [styleNavbar]="true"
+        (click)="activeMembers()"
+      ></app-members>
     </div>
     <div class="d-flex flex-column align-items-center">
       <p class="detail-section-title">{{ "GLOBAL.EXPIRE" | translate }}</p>
       <div class="d-flex align-items-center">
         <img class="calendar" src="../../../assets/images/calendar.svg" />
-        <p class="detail-section">{{ expiration ? getTime(expiration.toString()) : "Mai" }}</p>
+        <p class="detail-section">
+          {{ expiration ? getTime(expiration.toString()) : "Mai" }}
+        </p>
       </div>
     </div>
     <div class="d-flex flex-column align-items-center">

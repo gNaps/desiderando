@@ -28,10 +28,9 @@
       {{ "AUTH.INVALID_CREDENTIAL" | translate }}
     </div>
     <div class="button-box">
-      <button class="button button-primary" (click)="login()">
+      <button class="button button-primary mb-4" (click)="login()">
         {{ "AUTH.LOGIN" | translate }}
       </button>
-
       <h4>
         <a [routerLink]="['/auth', 'register']">{{ "AUTH.NOT_ACCOUNT" | translate }}</a>
       </h4>

@@ -116,6 +116,10 @@
       "USERNAME": "Username"
     }
   },
+  "NAVBAR": {
+    "HI": "Hi",
+    "WELCOME": "Welcome back on desiderando"
+  },
   "VALIDATE": {
     "CONFIRM_PASSWORD": "Passwords are not the same",
     "EMAIL": "E-mail error",

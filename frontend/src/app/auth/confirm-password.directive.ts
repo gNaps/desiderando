@@ -5,8 +5,6 @@ export function checkSamePassword(): ValidatorFn {
     if(control.parent && control.parent!.get("password")) {
       let pass = control.parent!.get("password")!.value;
       let confirmPass = control!.value;
-      console.log("pass", pass)
-      console.log("confirmPass", confirmPass)
       return pass === confirmPass ? null : { notSame: true };
     } else {
       return { notSame: true };

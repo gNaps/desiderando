@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
   @Input() giftLefts?: number;
   @Input() giftName?: string;
   @Input() giftCategory?: number;
+  @Input() progressList?: number = 0;
 
   @Output() onOpenMembers: EventEmitter<void> = new EventEmitter();
 
