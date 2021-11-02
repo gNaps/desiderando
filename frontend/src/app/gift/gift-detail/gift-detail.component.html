@@ -39,7 +39,10 @@
   <div class="gift-card">
     <div class="card-text">
       <p class="title">{{ "GIFTS.PRICE" | translate }}</p>
-      <p>{{ gift.price }}</p>
+      <p>
+        {{ gift.price }}
+        <span *ngIf="remainder">(rimangono {{ remainder }})</span>
+      </p>
     </div>
     <img src="../../../assets/images/credit-card.png" />
   </div>
@@ -76,5 +79,13 @@
         "
       />
     </div>
+  </div>
+  <div class="mb-4" *ngIf="gift.status === 'TOBUY' && gift.buyers.length === 0 && canBuy">
+    <button class="button button-primary" (click)="buy()">Compra</button>
+  </div>
+  <div class="mb-4" *ngIf="gift.status === 'GROUP' && !alreadyInGroup() && canBuy">
+    <button class="button button-primary" (click)="joinGroup()">
+      Partecipa
+    </button>
   </div>
 </div>

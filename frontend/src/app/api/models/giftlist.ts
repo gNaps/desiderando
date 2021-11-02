@@ -12,4 +12,5 @@ export interface Giftlist {
   expiration?: Date;
   members?: GiftlistUsersRoles[];
   gifts_percentage?: number;
+  owner_can_buy?: boolean;
 }

@@ -26,6 +26,7 @@
     </div>
     <div class="right-side" [ngClass]="{ complete: complete }">
       <circle-progress
+        *ngIf="canSeeWhat"
         [percent]="giftlist.gifts_percentage ?? 0"
         [radius]="40"
         [outerStrokeWidth]="4"

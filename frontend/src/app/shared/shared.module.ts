@@ -15,6 +15,7 @@ import { SuccessModalComponent } from './modals/success-modal/success-modal.comp
 import { NgbCollapse, NgbCollapseModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { MembersModalComponent } from './modals/members-modal/members-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BuyModalComponent } from './modals/buy-modal/buy-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavigatorComponent,
     GiftCardComponent,
     SuccessModalComponent,
-    MembersModalComponent
+    MembersModalComponent,
+    BuyModalComponent
   ],
   imports: [
     CommonModule,

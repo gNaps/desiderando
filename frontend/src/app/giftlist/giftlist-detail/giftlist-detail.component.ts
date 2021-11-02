@@ -20,6 +20,7 @@ export class GiftlistDetailComponent implements OnInit {
   canSeeWhat: boolean = true;
   canSeeWho: boolean = true;
   canModify: boolean = false;
+  canBuy: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,10 +41,10 @@ export class GiftlistDetailComponent implements OnInit {
       (m) => m.id === userId && m.role === "OWNER"
     )!;
 
-    console.log(user)
     if (user) {
       this.canSeeWhat = this.giftlist?.what!;
       this.canSeeWho = this.giftlist?.who!;
+      this.canBuy = this.giftlist?.owner_can_buy!;
       this.canModify = true;
     }
   }

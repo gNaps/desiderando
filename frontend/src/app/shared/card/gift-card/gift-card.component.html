@@ -11,10 +11,10 @@
         {{ getTime(gift.created_at!) }}
       </p>
       <div *ngIf="gift.status === 'TOBUY' && canSeeWhat" class="status tobuy">
-        Da comprare
+        {{ "GIFT.STATUS.TOBUY" | translate }}
       </div>
       <div *ngIf="gift.status === 'GROUP' && canSeeWhat" class="status group">
-        In gruppo
+        {{ "GIFT.STATUS.GROUP" | translate }}
         <ng-container *ngIf="canSeeWho">
           <img
           *ngFor="let b of gift.buyers"

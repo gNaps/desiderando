@@ -21,4 +21,4 @@ export const categories = [
   { id: 6, name: 'CATEGORY.MOTORS'},
   { id: 7, name: 'CATEGORY.FASHION'},
   { id: 8, name: 'CATEGORY.OTHER'}
-]
+];

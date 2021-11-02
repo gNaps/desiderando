@@ -47,4 +47,13 @@ export class GiftService {
       headers: headers,
     });
   }
+
+  buyGift(id: number, body: any) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    });
+    return this.httpClient.put(`${environment.apiUrl}/gifts/buy/${id}`, body, {
+      headers: headers,
+    });
+  }
 }

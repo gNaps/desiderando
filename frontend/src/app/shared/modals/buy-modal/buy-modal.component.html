@@ -1,0 +1,64 @@
+<div class="modal-body">
+  <div class="d-flex flex-column align-items-center">
+    <h5>{{ "MODAL.BUY.GIFT_CHOOSEN" | translate }} {{ giftName }}</h5>
+    <p class="secondary-text" *ngIf="status === 'TOBUY'">
+      {{ "MODAL.BUY.SUBTITLE_NOGROUP" | translate }}
+    </p>
+    <p class="secondary-text" *ngIf="status === 'GROUP'">
+      {{ "MODAL.BUY.SUBTITLE_GROUP" | translate }}
+    </p>
+  </div>
+  <div [formGroup]="buyForm" *ngIf="status === 'TOBUY'">
+    <div class="d-flex align-items-center">
+      <div>
+        <label class="custom-label-checkbox">
+          <input
+            type="radio"
+            value="NOGROUP"
+            class="custom-input-checkbox"
+            formControlName="type"
+          />
+          {{ "MODAL.BUY.NOGROUP" | translate }}
+        </label>
+        <label class="custom-label-checkbox">
+          <input
+            type="radio"
+            value="GROUP"
+            class="custom-input-checkbox"
+            formControlName="type"
+          />
+          {{ "MODAL.BUY.GROUP" | translate }}
+        </label>
+      </div>
+      <div class="gift">
+        <img src="../../../../assets/images/gift_3d.png" />
+      </div>
+    </div>
+    <div *ngIf="type === 'GROUP'">
+      <p>
+        {{ "MODAL.BUY.EXPLAIN_GROUP" | translate }}
+      </p>
+      <div class="d-flex align-items-center price-box">
+        <input type="text" class="custom-input" formControlName="price" />
+        <h3>/ {{ totalPrice }}</h3>
+      </div>
+    </div>
+  </div>
+  <div [formGroup]="buyForm" *ngIf="status === 'GROUP'">
+    <div class="gift d-flex justify-content-center">
+      <img src="../../../../assets/images/gift_3d.png" />
+    </div>
+    <div>
+      <p>{{ "MODAL.BUY.PRICE_CHOOSEN" | translate }}</p>
+      <div class="d-flex align-items-center price-box">
+        <input type="text" class="custom-input" formControlName="price" />
+        <h3>/ {{ totalPrice }}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center my-4">
+    <button class="button button-primary" (click)="buy()">
+      {{ "GLOBAL.PROCEED" | translate }}
+    </button>
+  </div>
+</div>

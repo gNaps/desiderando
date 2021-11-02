@@ -25,7 +25,6 @@ export class GiftCardComponent implements OnInit {
   }
 
   openGift() {
-    console.log("apri id ", this.gift.id);
     this.router.navigate([`giftlist/${this.giftlistId}/gift`, this.gift.id]);
   }
 }

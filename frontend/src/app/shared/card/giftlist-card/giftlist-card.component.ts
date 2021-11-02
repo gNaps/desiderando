@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { AuthService } from "src/app/api/api/auth.service";
 import { Giftlist } from "src/app/api/models/giftlist";
+import { User } from "src/app/api/models/user";
 import { getTime } from "src/app/core/utils";
 
 @Component({
@@ -8,15 +10,25 @@ import { getTime } from "src/app/core/utils";
   styleUrls: ["./giftlist-card.component.scss"],
 })
 export class GiftlistCardComponent implements OnInit {
+  canSeeWhat: boolean = true;
   getTime = getTime;
 
   @Input() giftlist!: Giftlist;
   @Input() classIndex: number = 0;
   @Input() complete?: boolean;
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const userId = this.authService.getLoggedUser().id;
+    const user: User = this.giftlist?.members!.find(
+      (m) => m.id === userId && m.role === "OWNER"
+    )!;
+
+    if (user) {
+      this.canSeeWhat = this.giftlist?.what!;
+    }
+  }
 
   getCircleProgressColor(index: number) {
     switch (index) {

@@ -51,6 +51,17 @@
         <span class="subtitle">{{ "GIFTLIST.WHO_EXPLAIN" | translate }}</span>
       </p>
     </label>
+    <label class="custom-label-checkbox d-flex align-items-center">
+      <input
+        type="checkbox"
+        class="custom-input-checkbox"
+        formControlName="owner_can_buy"
+      />
+      <p>
+        <span class="title">{{ "GIFTLIST.OWNER_CAN_BUY" | translate }}</span> <br />
+        <span class="subtitle">{{ "GIFTLIST.OWNER_CAN_BUY_EXPLAIN" | translate }}</span>
+      </p>
+    </label>
     <label class="custom-label">
       {{ "GIFTLIST.EXPIRE" | translate }}
       <input type="date" class="custom-input" formControlName="expiration" />

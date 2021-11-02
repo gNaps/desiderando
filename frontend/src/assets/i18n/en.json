@@ -39,6 +39,10 @@
       "PRICE": "Digit price of desiderio",
       "WHERE": "Digit where can buy"
     },
+    "STATUS": {
+      "TOBUY": "To buy",
+      "GROUP": "In group"
+    },
     "WHERE": "Where"
   },
   "GIFTS": {
@@ -57,6 +61,8 @@
     "DELETE": "Delete list",
     "NAME": "Name",
     "NEW_LIST": "New list",
+    "OWNER_CAN_BUY": "Owner users can buy desideri",
+    "OWNER_CAN_BUY_EXPLAIN": "",
     "PLACEHOLDER": {
       "NAME": "Digit name of list"
     },
@@ -79,6 +85,15 @@
     "SUCCESS": "Well done!"
   },
   "MODAL": {
+    "BUY": {
+      "EXPLAIN_GROUP": "By buying the gift as a group you can decide how much of the total price you would like to pay",
+      "GIFT_CHOOSEN": "You choose to give",
+      "GROUP": "Buy in group",
+      "NOGROUP": "Buy alone",
+      "PRICE_CHOOSEN": "Decide how much you would like to pay on the missing balance",
+      "SUBTITLE_GROUP": "For this desiderio is in progress a group",
+      "SUBTITLE_NOGROUP": "Now decide how to buy this desiderio"
+    },
     "MEMBERS": {
       "ADD": "Add",
       "GUEST": "Guest",

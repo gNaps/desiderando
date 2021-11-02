@@ -4,9 +4,6 @@
     [buttonType]="['NEW-LIST']"
     (onNewList)="createGiftlist()"
   ></app-search-input>
-  <!-- <button class="button-action-primary" (click)="createGiftlist()">
-    <img src="../../../assets/images/add-round.svg" />
-  </button> -->
 </div>
 <app-navigator [title]="'Liste gestite'"></app-navigator>
 <ng-container *ngIf="giftlistOwner && giftlistOwner.length > 0; else loading">

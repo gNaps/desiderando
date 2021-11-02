@@ -39,6 +39,10 @@
       "PRICE": "Digita il prezzo del desiderio",
       "WHERE": "Digita dove si può comprare"
     },
+    "STATUS": {
+      "TOBUY": "Da comprare",
+      "GROUP": "In gruppo"
+    },
     "WHERE": "Dove"
   },
   "GIFTS": {
@@ -57,12 +61,14 @@
     "DELETE": "Elimina lista",
     "NAME": "Nome",
     "NEW_LIST": "Nuova lista",
+    "OWNER_CAN_BUY": "Consenti agli utenti owner di prendere regali",
+    "OWNER_CAN_BUY_EXPLAIN": "",
     "PLACEHOLDER": {
       "NAME": "Digita il nome della lista"
     },
     "PUBLIC": "Consenti agli utenti guest di invitare altri utenti",
     "PUBLIC_EXPLAIN": "(Se non selezionato solamente gli owner potranno invitare altri utenti)",
-    "WHAT": "Consenti agli owner della lista di visualizzare chi ha comprato i desideri",
+    "WHAT": "Consenti agli owner della lista di visualizzare quali desideri sono stati comprati",
     "WHAT_EXPLAIN": "(Sconsigliato se si vuole mantenere l’effetto sorpresa)",
     "WHO": "Consenti agli owner della lista di visualizzare chi ha comprato i desideri",
     "WHO_EXPLAIN": "(Sconsigliato se si vuole mantenere l’effetto sorpresa)",
@@ -79,6 +85,15 @@
     "SUCCESS": "Ben fatto!"
   },
   "MODAL": {
+    "BUY": {
+      "EXPLAIN_GROUP": "Comprando il regalo in gruppo puoi decidere quanto del prezzo totale vorresti pagare",
+      "GIFT_CHOOSEN": "Hai scelto di regalare",
+      "GROUP": "Compra in gruppo",
+      "NOGROUP": "Compra da solo",
+      "PRICE_CHOOSEN": "Decidi quanto vorresti pagare sul saldo mancante",
+      "SUBTITLE_GROUP": "Per questo desiderio è in corso un regalo di gruppo",
+      "SUBTITLE_NOGROUP": "Decidi ora come comprare il regalo!"
+    },
     "MEMBERS": {
       "ADD": "Aggiungi",
       "GUEST": "Ospite",

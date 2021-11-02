@@ -3,7 +3,7 @@
   [title]="giftlist?.name!"
   [members]="giftlist?.members"
   [expiration]="giftlist?.expiration"
-  [giftLefts]="giftsLeft"
+  [giftLefts]="canSeeWhat ? giftsLeft : giftlist!.gifts!.length"
   (onOpenMembers)="openMembers()"
 ></app-navbar>
 <div class="d-flex align-items-center container-search">

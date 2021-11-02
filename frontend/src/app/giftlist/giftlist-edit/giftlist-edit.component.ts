@@ -32,8 +32,9 @@ export class GiftlistEditComponent implements OnInit {
     this.giftlistForm = new FormGroup({
       name: new FormControl("", [Validators.required]),
       public: new FormControl(false),
-      who: new FormControl(false),
       what: new FormControl(false),
+      who: new FormControl({ value: false, disabled: true }),
+      owner_can_buy: new FormControl({ value: false, disabled: true }),
       expiration: new FormControl(""),
     });
 
@@ -41,6 +42,18 @@ export class GiftlistEditComponent implements OnInit {
       this.isEdit = true;
       this.giftlistForm.patchValue(this.giftlist!);
     }
+
+    this.giftlistForm.controls["what"].valueChanges.subscribe((v) => {
+      if(v) {
+        this.giftlistForm.controls["who"].enable();
+        this.giftlistForm.controls["owner_can_buy"].enable();
+      } else {
+        this.giftlistForm.controls["who"].setValue(false);
+        this.giftlistForm.controls["owner_can_buy"].setValue(false);
+        this.giftlistForm.controls["who"].disable();
+        this.giftlistForm.controls["owner_can_buy"].disable();
+      }
+    });
   }
 
   save() {
