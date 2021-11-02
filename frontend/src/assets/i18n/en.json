@@ -25,6 +25,16 @@
     "USERNAME": "Username",
     "USERNAME_EMAIL": "Username or email"
   },
+  "CATEGORIES": {
+    "CATEGORY.VIDEOGAME": "Videogame",
+    "CATEGORY.TRIP": "Trip",
+    "CATEGORY.BOOK": "Book and comics",
+    "CATEGORY.HOME": "For home",
+    "CATEGORY.TECH": "Tech",
+    "CATEGORY.MOTORS": "Motors",
+    "CATEGORY.FASHION": "Fashion",
+    "CATEGORY.OTHER": "Other"
+  },
   "GIFT": {
     "BOUGHT": "This desiderio is now your gift",
     "CREATE": "Create desiderio",

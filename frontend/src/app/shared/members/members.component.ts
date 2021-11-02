@@ -12,9 +12,13 @@ export class MembersComponent implements OnInit {
   @Input() border: boolean = true;
   @Input() styleNavbar: boolean = false;
 
+  firstThree!: User[];
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.firstThree = this.members.slice(0, 3);
+  }
 
   getStyle() {
     return this.styleNavbar ? "navbar-style" : "style-" + this.classIndex;

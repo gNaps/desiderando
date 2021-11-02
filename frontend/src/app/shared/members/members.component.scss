@@ -22,18 +22,22 @@
 
     &.style-0 {
       border-color: $dark-green;
+      color: $dark-green;
       background-color: $light-green;
     }
     &.style-1 {
       border-color: $dark-red;
+      color: $dark-red;
       background-color: $light-red;
     }
     &.style-2 {
       border-color: $dark-purple;
+      color: $dark-purple;
       background-color: $light-purple;
     }
     &.style-3 {
       border-color: $dark-yellow;
+      color: $dark-yellow;
       background-color: $light-yellow;
     }
 
@@ -43,6 +47,7 @@
 
     &.navbar-style {
       border-color: $white;
+      color: $white;
       background-color: $black;
     }
   }

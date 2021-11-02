@@ -43,11 +43,12 @@
   <div class="icon-grid mt-4">
     <div *ngFor="let c of categories">
       <div
-        class="icon"
+        class="icon d-flex flex-column"
         [ngClass]="{ selected: checkIfSelected(c.id) }"
         (click)="selectIcon(c.id)"
       >
         <img [src]="'../../../assets/images/category/' + c.id + '.png'" />
+        {{ "CATEGORIES." + c.name | translate }}
       </div>
     </div>
   </div>

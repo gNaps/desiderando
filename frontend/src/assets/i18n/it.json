@@ -25,6 +25,16 @@
     "USERNAME": "Username",
     "USERNAME_EMAIL": "Username o email"
   },
+  "CATEGORIES": {
+    "CATEGORY.VIDEOGAME": "Videogame",
+    "CATEGORY.TRIP": "Viaggio",
+    "CATEGORY.BOOK": "Libri e fumetti",
+    "CATEGORY.HOME": "Per la casa",
+    "CATEGORY.TECH": "Tecnologia",
+    "CATEGORY.MOTORS": "Motori",
+    "CATEGORY.FASHION": "Moda",
+    "CATEGORY.OTHER": "Altro"
+  },
   "GIFT": {
     "BOUGHT": "Questo desiderio ora è il tuo regalo",
     "CREATE": "Creazione desiderio",
