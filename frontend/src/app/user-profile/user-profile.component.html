@@ -1,0 +1,75 @@
+<app-navbar
+  [type]="'MINIMAL'"
+  title="{{ 'PROFILE.TITLE' | translate }}"
+></app-navbar>
+<div
+  class="
+    d-flex
+    flex-column
+    justify-content-center
+    align-items-center
+    my-3
+    button-box
+  "
+>
+  <button class="button button-secondary" (click)="logout()">
+    {{ "PROFILE.LOGOUT" | translate }}
+  </button>
+</div>
+<label class="custom-label">{{ "PROFILE.LANGUAGE" | translate }}</label>
+<div class="language-box">
+  <p (click)="changeLanguage('it')">🇮🇹</p>
+  <p (click)="changeLanguage('en')">🇬🇧</p>
+</div>
+<div [formGroup]="profileForm">
+  <!-- <label class="custom-label">
+    {{ "AUTH.BIRTH_DATE" | translate }}
+    <input
+      type="date"
+      class="custom-input"
+      placeholder="Digita il tuo username..."
+      formControlName="born_date"
+    />
+    <app-control-errors controlName="born_date"></app-control-errors>
+  </label> -->
+  <label class="custom-label">{{ "PROFILE.AVATAR" | translate }}</label>
+  <div class="icon-grid">
+    <div *ngFor="let icon of iconPagePosition">
+      <div
+        class="icon"
+        [ngClass]="{ selected: checkIfSelected(icon) }"
+        (click)="selectIcon(icon)"
+      >
+        <img
+          [src]="'../../../assets/images/avatars/Avatar_' + (icon + 1) + '.png'"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="icon-grid-pagination">
+    <img
+      src="../../../assets/images/chevron_left_dark.svg"
+      (click)="prevPage()"
+    />
+    <img
+      src="../../../assets/images/chevron_right_dark.svg"
+      (click)="nextPage()"
+    />
+  </div>
+  <app-control-errors controlName="icon_profile"></app-control-errors>
+</div>
+
+<div
+  class="
+    d-flex
+    flex-column
+    justify-content-center
+    align-items-center
+    my-3
+    button-box
+  "
+>
+  <button class="button button-primary mb-3" (click)="saveProfile()">
+    {{ "PROFILE.SAVE_ICON" | translate }}
+  </button>
+</div>

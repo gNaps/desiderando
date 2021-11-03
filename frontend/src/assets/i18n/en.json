@@ -130,6 +130,13 @@
     "HI": "Hi",
     "WELCOME": "Welcome back on desiderando"
   },
+  "PROFILE": {
+    "AVATAR": "Select new avatar",
+    "LANGUAGE": "Change language",
+    "LOGOUT": "Logout",
+    "TITLE": "Profile",
+    "SAVE_ICON": "Update"
+  },
   "VALIDATE": {
     "CONFIRM_PASSWORD": "Passwords are not the same",
     "EMAIL": "E-mail error",

@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
@@ -63,9 +63,27 @@ export class AuthService {
   }
 
   updatePasswordByToken(token: string, password: string) {
-    return this.httpClient.post(`${environment.apiUrl}/recovery-passwords/update`, {
-      token,
-      password,
+    return this.httpClient.post(
+      `${environment.apiUrl}/recovery-passwords/update`,
+      {
+        token,
+        password,
+      }
+    );
+  }
+
+  updateProfile(icon_profile: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     });
+    return this.httpClient.post(
+      `${environment.apiUrl}/profile`,
+      {
+        icon_profile,
+      },
+      {
+        headers: headers,
+      }
+    );
   }
 }

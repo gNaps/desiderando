@@ -12,15 +12,19 @@
     [canModify]="canModify"
     (onSettingList)="editGiftlist()"
     (onNewItem)="createGift()"
+    (onFilter)="filterGift($event)"
   ></app-search-input>
 </div>
 <app-navigator [title]="'Desideri'"></app-navigator>
 <div>
-  <app-gift-card
-    *ngFor="let gift of giftlist?.gifts"
-    [gift]="gift"
-    [canSeeWhat]="canSeeWhat"
-    [canSeeWho]="canSeeWho"
-    [giftlistId]="giftlist?.id!"
-  ></app-gift-card>
+  <ng-container *ngFor="let gift of giftlist?.gifts">
+    <ng-container *ngIf="applyFilter(gift)">
+      <app-gift-card
+        [gift]="gift"
+        [canSeeWhat]="canSeeWhat"
+        [canSeeWho]="canSeeWho"
+        [giftlistId]="giftlist?.id!"
+      ></app-gift-card>
+    </ng-container>
+  </ng-container>
 </div>

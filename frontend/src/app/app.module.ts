@@ -14,6 +14,8 @@ import { NgProgressHttpModule } from "ngx-progressbar/http";
 import { SharedModule } from "./shared/shared.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ActivityComponent } from './activity/activity.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { ActivityComponent } from './activity/activity.component';
     LayoutComponent,
     DashboardComponent,
     FooterComponent,
-    ActivityComponent
+    ActivityComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,9 @@ import { ActivityComponent } from './activity/activity.component';
     NgProgressModule,
     NgProgressHttpModule,
     SharedModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

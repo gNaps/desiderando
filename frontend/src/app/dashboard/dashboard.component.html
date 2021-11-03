@@ -1,5 +1,5 @@
 <app-navbar [type]="'DASHBOARD'"></app-navbar>
-<app-search-input></app-search-input>
+<app-search-input (onFilter)="filterList($event)"></app-search-input>
 <app-navigator
   [title]="'Liste desideri'"
   [image]="'../../assets/images/arrow_right.svg'"
@@ -14,12 +14,26 @@
         let i = index
       "
     >
-      <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration">
+      <a
+        [routerLink]="['/giftlist', giftlist.id]"
+        class="no-decoration"
+        *ngIf="applyFilter(giftlist)"
+      >
         <app-giftlist-card
           [giftlist]="giftlist"
           [classIndex]="i"
         ></app-giftlist-card>
       </a>
+    </ng-container>
+    <ng-container *ngIf="giftlistList.length === 0">
+      <div class="d-flex flex-column mb-4">
+        <img src="../../assets/images/gift_3d.png" width="100" class="align-self-center" />
+        <p>
+          Sembra che tu non abbia ancora nessuna lista di desideri... perchè non
+          ne crei una subito?
+        </p>
+        <button class="button button-primary" (click)="createList()">Crea la tua prima lista</button>
+      </div>
     </ng-container>
   </div>
 </ng-container>

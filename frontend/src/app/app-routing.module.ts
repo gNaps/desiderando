@@ -5,6 +5,7 @@ import { ActivityResolver } from "./activity/activity.resolver";
 import { AuthGuard } from "./core/auth.guard";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { UserProfileComponent } from "./user-profile/user-profile.component";
 
 const routes: Routes = [
   {
@@ -31,7 +32,12 @@ const routes: Routes = [
             component: ActivityComponent,
             resolve: {
               activity: ActivityResolver,
-            }
+            },
+          },
+          {
+            canActivate: [AuthGuard],
+            path: "user-profile",
+            component: UserProfileComponent,
           },
           {
             path: "giftlist",

@@ -15,6 +15,7 @@ import { MembersModalComponent } from "src/app/shared/modals/members-modal/membe
   styleUrls: ["./giftlist-detail.component.scss"],
 })
 export class GiftlistDetailComponent implements OnInit {
+  filterName?: string;
   giftlist?: Giftlist;
   giftsLeft?: number;
   canSeeWhat: boolean = true;
@@ -87,5 +88,15 @@ export class GiftlistDetailComponent implements OnInit {
         )
         .subscribe();
     });
+  }
+
+  filterGift(filter: string) {
+    this.filterName = filter;
+  }
+
+  applyFilter(gift: Gift) {
+    return this.filterName && this.filterName !== ""
+      ? gift.name?.toLowerCase().includes(this.filterName.toLocaleLowerCase())
+      : true;
   }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
-import { ActivitiesService } from "src/app/api/api/activities.service";
 import { AuthService } from "src/app/api/api/auth.service";
 import { GiftlistService } from "src/app/api/api/giftlist.service";
 import { Giftlist } from "src/app/api/models/giftlist";
@@ -12,6 +11,8 @@ import { Giftlist } from "src/app/api/models/giftlist";
   styleUrls: ["./giftlist-list.component.scss"],
 })
 export class GiftlistListComponent implements OnInit {
+  filterName: string = "";
+
   giftlists$: Observable<any> = new Observable();
   activities$: Observable<any> = new Observable();
 
@@ -43,10 +44,22 @@ export class GiftlistListComponent implements OnInit {
   }
 
   createGiftlist() {
-    this.router.navigate(['giftlist/create']);
+    this.router.navigate(["giftlist/create"]);
   }
 
   findOriginalIndex(id: number) {
-    return this.giftlistOriginal?.findIndex(g => g.id === id)!;
+    return this.giftlistOriginal?.findIndex((g) => g.id === id)!;
+  }
+
+  filterList(filter: string) {
+    this.filterName = filter;
+  }
+
+  applyFilter(giftlist: Giftlist) {
+    return this.filterName && this.filterName !== ""
+      ? giftlist.name
+          ?.toLowerCase()
+          .includes(this.filterName.toLocaleLowerCase())
+      : true;
   }
 }

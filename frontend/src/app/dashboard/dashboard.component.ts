@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { Observable, Subject } from "rxjs";
 import { switchMap } from "rxjs/operators";
 import { ActivitiesService } from "../api/api/activities.service";
@@ -13,6 +14,8 @@ import { Giftlist } from "../api/models/giftlist";
   styleUrls: ["./dashboard.component.scss"],
 })
 export class DashboardComponent implements OnInit {
+  filterName: string = "";
+
   giftlists$: Observable<any> = new Observable();
   activities$: Observable<any> = new Observable();
 
@@ -20,7 +23,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private giftlistsService: GiftlistService,
-    private activitiesService: ActivitiesService
+    private activitiesService: ActivitiesService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -34,5 +38,21 @@ export class DashboardComponent implements OnInit {
 
   trackByFnActivities(index: number, item: Activity) {
     return item.id;
+  }
+
+  filterList(filter: string) {
+    this.filterName = filter;
+  }
+
+  applyFilter(giftlist: Giftlist) {
+    return this.filterName && this.filterName !== ""
+      ? giftlist.name
+          ?.toLowerCase()
+          .includes(this.filterName.toLocaleLowerCase())
+      : true;
+  }
+
+  createList() {
+    this.router.navigate(['/giftlist/create'])
   }
 }

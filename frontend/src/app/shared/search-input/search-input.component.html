@@ -4,6 +4,7 @@
       type="text"
       class="custom-input"
       placeholder="Cerca una lista dei desideri..."
+      [formControl]="searchControl"
     />
   </label>
   <button
@@ -15,21 +16,21 @@
   </button>
   <button
     class="button-action-primary"
-    *ngIf="buttonType?.includes('SETTINGS-LIST')"
+    *ngIf="buttonType?.includes('SETTINGS-LIST') && canModify"
     (click)="settingList()"
   >
     <img src="../../../assets/images/settings.svg" />
   </button>
   <button
     class="button-action-primary"
-    *ngIf="buttonType?.includes('NEW-ITEM')"
+    *ngIf="buttonType?.includes('NEW-ITEM') && canModify"
     (click)="newItem()"
   >
     <img src="../../../assets/images/add-round.svg" />
   </button>
   <button
     class="button-action-primary"
-    *ngIf="buttonType?.includes('SETTINGS-ITEM')"
+    *ngIf="buttonType?.includes('SETTINGS-ITEM') && canModify"
     (click)="settingItem()"
   >
     <img src="../../../assets/images/settings.svg" />

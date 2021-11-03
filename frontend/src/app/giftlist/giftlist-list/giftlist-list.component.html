@@ -3,6 +3,7 @@
   <app-search-input
     [buttonType]="['NEW-LIST']"
     (onNewList)="createGiftlist()"
+    (onFilter)="filterList($event)"
   ></app-search-input>
 </div>
 <app-navigator [title]="'Liste gestite'"></app-navigator>
@@ -15,7 +16,7 @@
         let i = index
       "
     >
-      <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration">
+      <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration" *ngIf="applyFilter(giftlist)">
         <app-giftlist-card
           [giftlist]="giftlist"
           [classIndex]="findOriginalIndex(giftlist.id!)"
@@ -35,7 +36,7 @@
         let i = index
       "
     >
-      <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration">
+      <a [routerLink]="['/giftlist', giftlist.id]" class="no-decoration" *ngIf="applyFilter(giftlist)">
         <app-giftlist-card
           [giftlist]="giftlist"
           [classIndex]="findOriginalIndex(giftlist.id!)"

@@ -1,0 +1,47 @@
+@import "../../scss/abstract/variables";
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  .icon {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+
+    &.selected {
+      background: $light-green;
+      border-radius: 20px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.icon-grid-pagination {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1em;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.language-box {
+  display: flex;
+  justify-content: center;
+  p {
+    font-size: 2em;
+    margin: 0 1em;
+    cursor: pointer;
+  }
+}
+
+.button-box {
+  button {
+    min-width: 200px;
+  }
+}

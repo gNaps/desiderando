@@ -131,6 +131,13 @@
     "HI": "Ciao",
     "WELCOME": "Bentornato su desiderando"
   },
+  "PROFILE": {
+    "AVATAR": "Seleziona il tuo nuovo avatar",
+    "LANGUAGE": "Cambia lingua",
+    "LOGOUT": "Logout",
+    "TITLE": "Profilo",
+    "SAVE_ICON": "Aggiorna"
+  },
   "VALIDATE": {
     "CONFIRM_PASSWORD": "Le password non combaciano",
     "EMAIL": "E-mail non valida",
