@@ -49,4 +49,23 @@ export class AuthService {
     localStorage.removeItem("userLoggedIn");
     localStorage.removeItem("jwt");
   }
+
+  sendEmailRecoveryPassword(email: string) {
+    return this.httpClient.post(`${environment.apiUrl}/recovery-passwords`, {
+      email: email,
+    });
+  }
+
+  checkTokenValid(token: string) {
+    return this.httpClient.get(
+      `${environment.apiUrl}/recovery-passwords/${token}`
+    );
+  }
+
+  updatePasswordByToken(token: string, password: string) {
+    return this.httpClient.post(`${environment.apiUrl}/recovery-passwords/update`, {
+      token,
+      password,
+    });
+  }
 }

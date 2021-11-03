@@ -9,9 +9,11 @@ import { TranslateModule } from "@ngx-translate/core";
 import { NgProgressModule } from "ngx-progressbar";
 import { NgProgressHttpModule } from "ngx-progressbar/http";
 import { SharedModule } from "../shared/shared.module";
+import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
+import { RecoveryPasswordComponent } from './login/recovery-password/recovery-password.component';
 
 @NgModule({
-  declarations: [LoginComponent, AuthComponent, RegisterComponent],
+  declarations: [LoginComponent, AuthComponent, RegisterComponent, ForgotPasswordComponent, RecoveryPasswordComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
