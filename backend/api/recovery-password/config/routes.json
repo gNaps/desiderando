@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/recovery-passwords/:token",
+      "handler": "recovery-password.checkToken",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/recovery-passwords",
+      "handler": "recovery-password.recoveryPassword",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/recovery-passwords/update",
+      "handler": "recovery-password.updatePasswordByToken",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

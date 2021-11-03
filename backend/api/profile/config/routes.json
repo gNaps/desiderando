@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/profile",
+      "handler": "profile.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/profile/changePassword",
+      "handler": "profile.updatePassword",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
