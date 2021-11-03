@@ -27,7 +27,7 @@ module.exports = {
       token: uuidv4(),
     });
     // console.log("token generato è ", token);
-    const page = `${process.env.FRONTEND_URL}/auth/recoveryPassword?token=${token.token}`;
+    const page = `${process.env.FRONTEND_URL}/auth/recovery-password?token=${token.token}`;
 
     // Send an email to validate his subscriptions.
     //const template = await strapi.query('setting').find({ setting_key: 'mail_template_recovery_password' }, []);
