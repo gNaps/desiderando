@@ -98,7 +98,6 @@ export class UserProfileComponent implements OnInit {
 
   changeLanguage(lang: string) {
     this.ds.changeLanguage(lang);
-    console.log('aggiornato')
   }
 
   logout() {

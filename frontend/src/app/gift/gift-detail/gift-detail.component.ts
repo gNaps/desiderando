@@ -100,6 +100,26 @@ export class GiftDetailComponent implements OnInit {
     modalRef.componentInstance.status = this.gift.status;
     modalRef.componentInstance.totalPrice = this.remainder;
     modalRef.componentInstance.giftName = this.gift.name;
+    modalRef.componentInstance.onBuy.subscribe((data: number) => {
+      this.giftService
+        .buyGift(this.gift?.id!, { price: data })
+        .pipe(
+          tap((data: any) => {
+            this.gift.status = data.status;
+            this.gift.buyers = [...data.buyers];
+            modalRef.close();
+            const modalRefSuccess = this.modalService.open(
+              SuccessModalComponent,
+              {
+                centered: true,
+              }
+            );
+            modalRefSuccess.componentInstance.message =
+              this.ts.instant("GIFT.BOUGHT");
+          })
+        )
+        .subscribe();
+    });
   }
 
   alreadyInGroup() {

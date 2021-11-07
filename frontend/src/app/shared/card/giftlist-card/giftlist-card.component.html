@@ -2,7 +2,14 @@
   class="giftlist-card"
   [ngClass]="['style-' + classIndex, checkIfComplete()]"
 >
-  <h4>{{ giftlist.name }}</h4>
+  <h4 *ngIf="complete">{{ giftlist.name }}</h4>
+  <h4 *ngIf="!complete">
+    {{
+      giftlist.name!.length > 15
+        ? (giftlist.name | slice: 0:15) + ".."
+        : giftlist.name
+    }}
+  </h4>
   <div class="giftlist-card-body">
     <div class="left-side">
       <app-members
